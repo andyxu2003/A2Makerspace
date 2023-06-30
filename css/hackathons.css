@@ -1,0 +1,130 @@
+.container {
+  display: grid;
+  grid-template-columns: 18% 82%;
+  grid-template-rows: 150px 1000px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.container > div {
+  /*   border: 1px solid black; */
+}
+
+.container > .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+}
+
+.container > .filter-container {
+  background-color: #f6f6f6;
+}
+
+.filter-container > .title {
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  padding-bottom: 15px;
+}
+
+.section-container {
+  /*   border: 1px solid red; */
+  margin: 35px 25%;
+}
+
+.section-container > .title {
+  font-size: 22px;
+  text-align: left;
+}
+
+.status-form {
+  margin-top: 5px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.hackathon-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+
+
+.hackathon {
+  display: flex;
+  width: 70%;
+  height: 240px;
+  padding: 30px;
+  border-top: 2px solid black;
+  text-decoration: none;
+  color: black;
+  
+}
+
+.hackathon img {
+  height: 240px;
+  width: 320px;
+  object-fit: cover;
+  transition-duration: .3s;
+}
+
+.hackathon:hover img {
+  opacity: .6;
+}
+
+.hackathon-info-container {
+  margin-left: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 3;
+  margin-left: 3%;
+}
+
+.hackathon-info-container div {
+  height: 33.33%;
+}
+
+.hackathon-info-container > .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hackathon-info-container > .date-participants {
+  display: flex;
+}
+
+.hackathon-info-container > .date-participants div {
+  width: 50%;
+  height: 100%;
+  font-size: 20px;
+}
+
+.hackathon-info-container > .tags {
+  display: flex;
+  padding-top: 30px;
+}
+
+.hackathon-info-container > .tags button {
+  height: 40px;
+  margin-right: 30px;
+  border-radius: 25px;
+  border-style: solid;
+  font-size: 16px;
+  width: 100px;
+  background-color: #f2f2f2;
+}
+
+.bottom-border {
+  width: 70%;
+  padding: 30px;
+  border-top: 2px solid black;
+}
+
+

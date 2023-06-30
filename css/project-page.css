@@ -1,0 +1,221 @@
+.top-container {
+  margin: 2.5% 12% 0 12%;
+  max-height: 100%;
+}
+
+.project-name {
+  text-align: center;
+  font-size: 50px;
+}
+
+.project-image-container {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.arrow-container img {
+  width: 30px;
+  height: 40px;
+}
+
+#left-arrow {
+  transform: scaleX(-1);
+}
+
+.project-image {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+.bottom-images-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-images-container img{
+  max-width: 80px;
+  max-height: 60px;
+  margin: 25px 20px;
+}
+
+.buttons-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons-container button {
+  width: 19%;
+  height: 40px;
+  background-color: #1434A4; 
+  color: white;
+  border-style: none;
+  font-size: 16px;
+  margin: 9px 15px;
+  cursor: pointer;
+  transition-duration: .4s;
+}
+
+.buttons-container button:hover {
+  background-color: #27285C;
+}
+
+.bottom-container-gray {
+  background-color: #f2f2f2;
+  margin-top: 2.5%;
+}
+
+.bottom-container-white {
+  background-color: white;
+  padding-top: .5%;
+}
+
+.bottom-container-content {
+  margin: 0 10%;
+  max-height: 100%;
+  padding-top: 40px;
+/*   border: 1px solid black; */
+}
+
+.content-container {
+  text-align: left;
+}
+
+#headings {
+  color: #1434A4;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.title {
+  font-size: 40px;
+  margin-top: -15px;
+}
+
+.intro-content {
+  font-size: 22px;
+  line-height: 1.8;
+  padding-bottom: 50px;
+}
+
+.subheading {
+  font-size: 35px;
+}
+
+.specs-content {
+  font-size: 22px;
+  line-height: 1.8;
+  margin-top: -20px;
+}
+
+/* Skills Tutorials Videos */
+
+.interviews-flex-container {
+  display: flex;
+  justify-content: space-between;
+  /*   width: 100%; */
+  height: 500px;
+  /*   border: solid 1px black; */
+}
+
+.interviews-item {
+  /*   border: dotted 1px black; */
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+
+.interviews-item-title {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 24px;
+}
+
+.interviews-item img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.interviews-item iframe {
+  width: 400px;
+  height: 300px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.button-container button {
+  width: 47%;
+  height: 40px;
+  border-radius: 12px;
+  border-style: none;
+  color: white;
+  background-color: #1434A4;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button-container button:hover {
+  background-color: #27285C;
+}
+
+.learn-more {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  color: black;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
+
+/* Similar Projects*/
+
+.projects-title {
+  font-size: 55px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.projects-flex-container {
+  display: flex;
+  justify-content: center;
+  /*   width: 100%; */
+  height: 500px;
+  /*   border: solid 1px black; */
+  margin-top: 20px;
+}
+
+.projects-item {
+  /*   border: dotted 1px black; */
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+
+.projects-item-title {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 24px;
+}
+
+.projects-item img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+    <title>All Hackathons</title>
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hackathons.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div class="blank"></div>
+      <div class="title">Hackathons</div>
+      <div class="filter-container">
+        <div class="title">Filters</div>
+        <div class="section-container">
+          <div class="title">Status</div>
+          <form action="" class="status-form">
+            <input
+              type="checkbox"
+              id="status1"
+              name="status1"
+              value="upcoming"
+            />
+            <label for="vehicle1">Upcoming</label><br />
+            <input type="checkbox" id="status2" name="status2" value="past" />
+            <label for="vehicle2">Past</label><br />
+          </form>
+        </div>
+        <div class="section-container">
+          <div class="title">Tags</div>
+          <form action="" class="status-form">
+            <input type="checkbox" id="tag1" name="status1" value="tag1" />
+            <label for="vehicle1">Tag 1</label><br />
+            <input type="checkbox" id="tag2" name="tag2" value="tag2" />
+            <label for="vehicle2">Tag 2</label><br />
+            <input type="checkbox" id="tag3" name="tag3" value="tag3" />
+            <label for="vehicle2">Tag 3</label><br />
+          </form>
+        </div>
+        <div class="section-container">
+          <div class="title">Length</div>
+          <form action="" class="status-form">
+            <input
+              type="checkbox"
+              id="length1"
+              name="length1"
+              value="length1"
+            />
+            <label for="vehicle1">Length 1</label><br />
+            <input
+              type="checkbox"
+              id="length2"
+              name="length2"
+              value="length2"
+            />
+            <label for="vehicle2">Length 2</label><br />
+            <input
+              type="checkbox"
+              id="length3"
+              name="length3"
+              value="length3"
+            />
+            <label for="vehicle2">Length 3</label><br />
+          </form>
+        </div>
+      </div>
+
+      <div class="hackathon-container">
+        <a href="hackathons/sample-hackathon-details.html" class="hackathon">
+          <img
+            src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/hackathon.png?v=1687963515832"
+          />
+          <div class="hackathon-info-container">
+            <div class="title">Hackathon Name</div>
+            <div class="date-participants">
+              <div>Date</div>
+              <div># Participants</div>
+            </div>
+            <div class="tags">
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+            </div>
+          </div>
+        </a>
+        
+        <a href="hackathons/sample-hackathon-details.html" class="hackathon">
+          <img
+            src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/hackathon.png?v=1687963515832"
+          />
+          <div class="hackathon-info-container">
+            <div class="title">Hackathon Name</div>
+            <div class="date-participants">
+              <div>Date</div>
+              <div># Participants</div>
+            </div>
+            <div class="tags">
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+            </div>
+          </div>
+        </a>
+        
+        <a href="hackathons/sample-hackathon-details.html" class="hackathon">
+          <img
+            src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/hackathon.png?v=1687963515832"
+          />
+          <div class="hackathon-info-container">
+            <div class="title">Hackathon Name</div>
+            <div class="date-participants">
+              <div>Date</div>
+              <div># Participants</div>
+            </div>
+            <div class="tags">
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+              <button type="button">Tag</button>
+            </div>
+          </div>
+        </a>
+        
+        <div class="bottom-border">
+          
+        </div>
+        
+      </div>
+    </div>
+  </body>
+</html>

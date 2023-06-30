@@ -1,0 +1,18 @@
+.bottom-container {
+  margin: 40px 6% 0 6%;
+}
+
+.info-container > .heading {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.info-container > .text {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.text ul {
+  line-height: 2;
+}
+

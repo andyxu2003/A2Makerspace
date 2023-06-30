@@ -1,0 +1,13 @@
+.info-container > .heading {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.info-container > .text {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.bottom-container {
+  margin: 40px 6% 0 6%;
+}

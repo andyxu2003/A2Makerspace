@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+    <title>Upload Project</title>
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/upload-project.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <div class="upload-header">
+      <div class="upload-header-container">
+        <nav>
+          <ul>
+            <li><a href="#"> < Go Back</a></li>
+            <li><a href="#"> ? Help </a></li>
+            <li><a href="#">Submit</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="white-container">
+      <!--Upload Cover Image-->
+
+      <div class="title">Upload Cover Image</div>
+      <div class="subtitle">What image best showcases your project?</div>
+      <div class="upload-image-box">
+        <p>
+          Drag and drop here <br />
+          OR <br />
+          Browse below
+        </p>
+      </div>
+      <div class="browse-button">
+        <button type="button">Browse</button>
+      </div>
+
+      <!--Project Title Input-->
+
+      <div class="title-input">
+        <div class="title">Project Title</div>
+        <input
+          type="text"
+          id="project-title"
+          name="project-title"
+          placeholder="Enter Project Title"
+        />
+      </div>
+
+      <!--Category Input-->
+
+      <div class="category-input">
+        <div class="title">Category</div>
+        <select name="category" id="category">
+          <option value="Option 1">Option 1</option>
+          <option value="Option 2">Option 2</option>
+          <option value="Option 3">Option 3</option>
+          <option value="Option 4">Option 4</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="space-10px"></div>
+    <div class="space-10px"></div>
+    <div class="space-10px"></div>
+
+    <!--Introduction-->
+
+    <div class="gray-container">
+      <div class="title">Introduction</div>
+      <div class="subtitle">What did you make and why?</div>
+      <div class="intro-input-container">
+        <span class="intro-input" role="textbox" contenteditable> </span>
+      </div>
+
+      <div class="space-50px"></div>
+      <div class="space-50px"></div>
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+
+      <!--Supplies and Tools-->
+
+      <div class="title">Supplies and Tools</div>
+      <div class="subtitle">
+        What did you use to make your project? Include the quantity of each item
+      </div>
+
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+
+      <div class="supplies-container">
+        <form class="supplies-form">
+          <input
+            type="text"
+            class="supplies-input"
+            name="supplies"
+            placeholder="Enter supplies and tools"
+            id="placeholder"
+          />
+          <input
+            type="number"
+            class="quantity-input"
+            name="quantity"
+            placeholder="Qty"
+            id="placeholder"
+          />
+          <input type="submit" value="Add" class="add-button" />
+        </form>
+        <div class="supplies-list-container">
+          <div class="items-added-title">Items Added</div>
+          <div class="quantity-title">Quantity</div>
+          <div class="item">Item 1</div>
+          <div class="quantity">Number</div>
+          <div class="item">Item 2</div>
+          <div class="quantity">Number</div>
+          <div class="item">Item 3</div>
+          <div class="quantity">Number</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="white-container">
+      <div class="title">Skills Needed</div>
+      <div class="subtitle">
+        What type of skills do you need to create this project?
+      </div>
+
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+
+      <div class="skills-container">
+        <form class="skills-form">
+          <input
+            type="text"
+            class="supplies-input"
+            name="supplies"
+            placeholder="Enter skills"
+            id="placeholder"
+          />
+          <select name="skill level" id="skill level">
+            <option value="level 1">Level 1</option>
+            <option value="level 2">Level 2</option>
+            <option value="level 3">Level 3</option>
+          </select>
+          <input type="submit" value="Add" class="add-button" />
+        </form>
+        <div class="skills-list-container">
+          <div class="skills-title">Skills Added</div>
+          <div class="level-title">Skill Level</div>
+          <div class="skill">Skill 1</div>
+          <div class="level">Level</div>
+          <div class="skill">Skill 2</div>
+          <div class="level">Level</div>
+          <div class="skill">Skill 3</div>
+          <div class="level">Level</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-50px"></div>
+  </body>
+</html>

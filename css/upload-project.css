@@ -1,0 +1,240 @@
+.upload-header {
+  background-color: #f6f6f6;
+  color: black;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.upload-header-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.upload-header-container nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.upload-header-container nav ul li {
+  margin-left: 450px;
+}
+
+.upload-header-container nav ul li:first-child {
+  margin-left: 0;
+}
+
+.upload-header-container nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-header-container nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.white-container {
+  background-color: white;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*   border: 1px solid black; */
+}
+
+.title {
+  font-size: 35px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #1434a4;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.upload-image-box {
+  border: 2px dashed black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 600px;
+  height: 450px;
+}
+
+.upload-image-box p {
+  font-size: 30px;
+  line-height: 3;
+  text-align: center;
+}
+
+.browse-button {
+  margin-top: 20px;
+}
+
+.browse-button button {
+  border-style: none;
+  border-radius: 15px;
+  width: 150px;
+  height: 50px;
+  background-color: #1434a4;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.browse-button button:hover {
+  background-color: #202a44;
+}
+
+.title-input,
+.category-input {
+  margin-top: 80px;
+}
+
+.title-input input,
+.category-input select {
+  width: 800px;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.gray-container {
+  margin: 70px 0;
+  padding: 70px 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.intro-input-container {
+  margin-top: 40px;
+}
+
+.intro-input {
+  display: block;
+  width: 1000px;
+  overflow: hidden;
+  resize: both;
+  min-height: 500px;
+  line-height: 20px;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.supplies-container,
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1000px;
+  /*   height: 50px; */
+}
+
+.supplies-form,
+.skills-form {
+  margin: 0 14%;
+  padding: 20px 0;
+  /*   margin: 20px 14% 20px 14%; */
+  display: flex;
+  width: 1000px;
+  height: 50px;
+  text-align: justify;
+}
+
+.supplies-form > input[type="text"],
+.supplies-form > input[type="number"],
+.supplies-form > input[type="submit"] {
+  background-color: white;
+  padding: 10px;
+  font-size: 18px;
+  margin: 0 10px;
+  border: 1px solid black;
+}
+
+.supplies-form > input[type="text"] {
+  width: 800px;
+}
+
+.supplies-form > input[type="number"],
+.supplies-form > input[type="submit"] {
+  width: 50px;
+}
+
+.supplies-form > input[type="submit"] {
+  width: 150px;
+}
+
+.supplies-list-container {
+  display: grid;
+  grid-template-columns: 752px 248px;
+  grid-template-rows: repeat(4, 50px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+.items-added-title,
+.quantity-title,
+.skills-title,
+.level-title {
+  font-size: 24px;
+}
+
+.item,
+.quantity,
+.skill,
+.level {
+  font-size: 18px;
+}
+
+.skills-form > input[type="text"],
+.skills-form > select,
+.skills-form > input[type="submit"] {
+  background-color: white;
+  padding: 10px;
+  font-size: 18px;
+  margin: 0 10px;
+  border: 1px solid black;
+}
+
+.skills-form > input[type="text"] {
+  width: 500px;
+}
+
+.skills-form > select {
+  width: 350px;
+}
+
+.skills-form > input[type="submit"] {
+  width: 150px;
+}
+
+.skills-list-container {
+  display: grid;
+  grid-template-columns: 500px 500px;
+  grid-template-rows: repeat(4, 50px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
+
+

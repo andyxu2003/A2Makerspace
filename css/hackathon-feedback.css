@@ -1,0 +1,31 @@
+.bottom-container {
+  margin-top: 40px;
+}
+
+.info-container {
+  margin: 0 10%;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.feedback-container  {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.feedback-container button {
+  color: white;
+  background-color: #1434a4;
+  font-size: 24px;
+  padding: 20px;
+  border-style: none;
+  border-radius: 30px;
+  transition-duration: .3s;
+  cursor: pointer;
+}
+
+.feedback-container button:hover {
+  background-color: #202a44;
+}

@@ -1,0 +1,104 @@
+h1 {
+  text-align: center;
+  margin: 45px 0;
+  font-size: 50px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #1434a4;
+/*   margin-bottom: 30px; */
+  padding-bottom: 10px;
+}
+
+.gray-container {
+  height: auto;
+  background-color: #f6f6f6;
+}
+
+.search {
+  text-align: center;
+}
+
+.search > select,
+.search > input[type="submit"] {
+  height: 50px;
+  box-sizing: content-box;
+  font-size: 18px;  
+}
+
+.search > select {
+  width: 600px;
+  margin-right: 5px;
+  padding-left: 5px;
+  
+}
+
+.search > input[type="submit"] {
+  width: 100px;
+  background-color: #1434a4; 
+  color: white;
+/*   border-style: none; */
+  border: 1px solid #1434a4;
+  border-radius: 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.results {
+  font-size: 24px;
+  margin-left: 10%;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+
+.tutorials-container {
+  margin: 30px 10% 0 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+ 
+.video-container {
+  width: 640px;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+.video-title {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+}
+
+iframe {
+  width: 640px;
+  height: 360px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.button-container button {
+  width: 40%;
+  height: 45px;
+  background-color: #1434a4;
+  color: white;
+  border-style: none;
+  border-radius: 15px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #202a44;
+}
+
+button:hover {
+  background-color: #202a44;
+}

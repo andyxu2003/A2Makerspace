@@ -1,0 +1,62 @@
+h1 {
+  text-align: center;
+  margin: 45px 0;
+  font-size: 50px;
+}
+
+.grid-container {
+  margin: 0 16%;
+  height: auto;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.forum-container {
+  display: grid;
+  grid-template-columns: 70% repeat(2, 15%);
+  grid-template-rows: 50px repeat(6, 70px);
+}
+
+.forum-container > .header,
+.forum-container > .header2,
+.forum-container > .header3 {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  font-size: 24px;
+  font-weight: bolder;
+  border-bottom: 2px solid black;
+}
+
+.forum-container > .header,
+.forum-container > .name {
+  padding-left: 2%;
+}
+
+.forum-container > .header2,
+.forum-container > .header3,
+.forum-container > .topics-num, 
+.forum-container > .posts-num {
+  justify-content: center;
+  
+  
+}
+
+.forum-container > .name,
+.forum-container > .topics-num,
+.forum-container > .posts-num {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  border-bottom: 2px solid black;
+}
+
+.forum-container > .name {
+  text-decoration: none;
+  color: black;
+}
+
+.forum-container > .name:hover {
+  text-decoration: underline;
+}

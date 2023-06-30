@@ -1,0 +1,170 @@
+.intro-container {
+  display: flex;
+  height: 650px;
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+
+.intro-container img {
+  height: auto;
+}
+
+.mission-container {
+  margin: 0 12%;
+}
+
+.mission-title {
+  font-size: 55px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+span {
+  color: #1434A4;
+  font-weight: bold;
+}
+
+.mission-statement {
+  margin-top: 25px;
+  font-size: 28px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.projects-container {
+  background-color: #f6f6f6;
+  width: 100%;
+  height: 650px;
+  margin-top: 70px;
+}
+
+.projects-title {
+  font-size: 55px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.projects-flex-container {
+  display: flex;
+  justify-content: center;
+  /*   width: 100%; */
+  height: 500px;
+  /*   border: solid 1px black; */
+  margin-top: 20px;
+}
+
+.projects-item {
+  /*   border: dotted 1px black; */
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+
+.projects-item a {
+  transition-duration: .4s;
+}
+
+.projects-item a:hover {
+  opacity: .6;
+}
+
+.projects-item-title {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 24px;
+}
+
+.projects-item img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+/* INTERVIEWS */
+
+.interviews-container {
+  background-color: white;
+  width: 100%;
+  height: 650px;
+  margin-top: 10px;
+}
+
+.interviews-title {
+  font-size: 55px;
+  text-align: center;
+  padding-top: 35px;
+}
+
+.interviews-flex-container {
+  display: flex;
+  justify-content: center;
+  /*   width: 100%; */
+  height: 500px;
+  /*   border: solid 1px black; */
+  margin-top: 20px;
+}
+
+.interviews-item {
+  /*   border: dotted 1px black; */
+  width: 400px;
+  height: 400px;
+  margin: 20px;
+}
+
+.interviews-item-title {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  font-size: 24px;
+}
+
+.interviews-item img {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+}
+
+.interviews-item iframe {
+  width: 400px;
+  height: 300px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.button-container button {
+  width: 47%;
+  height: 40px;
+  border-radius: 12px;
+  border-style: none;
+  color: white;
+  background-color: #1434A4;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.button-container button:hover {
+  background-color: #27285C;
+}
+
+.learn-more {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+}
