@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+
+    <title>Virtual Makerspace</title>
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    
+    <!--Intro-->
+    
+    <div class="intro-container">
+      <div class="welcome">
+        Welcome to the Makerspace!
+      </div>
+      <img
+        src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/makerspace.png?v=1687375842807"
+        alt="Makerspace"
+      />
+    </div>
+    
+    <!--Mission Statement-->
+    
+    <div class="mission-container">
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+      <div class="mission-title">
+        Our <span>Mission</span>
+      </div>
+      <div class="mission-statement">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Arcu cursus vitae
+        congue mauris rhoncus aenean vel elit scelerisque. Cursus in hac
+        habitasse platea dictumst. Quam lacus suspendisse faucibus interdum
+        posuere lorem ipsum dolor sit. Ut tristique et egestas quis ipsum
+        suspendisse ultrices gravida dictum.
+      </div>
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+    </div>
+    
+    <!--Featured Projects-->
+
+    <div class="projects-container">
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+      <div class="projects-title">
+        Featured <span class="projects-blue">Projects</span>
+      </div>
+
+      <div class="projects-flex-container">
+        <div class="projects-item">
+          <div class="projects-item-title">Lego Robot</div>
+          <a href="projects/Lego-Robot.html">
+              <img
+                src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/lego-robot.jpeg?v=1687381788460"
+                alt="Lego Robot"
+            /></a>
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://www.lego.com/en-us/themes/mindstorms/about"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+        <div class="projects-item">
+          <div class="projects-item-title">3D Printed Elephant</div>
+          <img
+            src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/3d-elephant.jpeg?v=1687381779155"
+            alt="3D Printed Elephant"
+          />
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://all3dp.com/2/3d-printed-elephant-massively-mighty-models/"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+        <div class="projects-item">
+          <div class="projects-item-title">BattleBot</div>
+          <img
+            src="https://cdn.glitch.global/fdf75b2b-7e9a-4bb3-986a-bd88e96d179a/battlebot.jpeg?v=1687381782858"
+            alt="BattleBot"
+          />
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://battlebots.com/"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+    </div>
+    
+    <!--Featured Interviews-->
+
+    <div class="interviews-container">
+      <div class="space-10px"></div>
+      <div class="interviews-title">
+        Featured <span class="interviews-blue">Interviews</span>
+      </div>
+
+      <div class="interviews-flex-container">
+        <div class="interviews-item">
+          <div class="interviews-item-title">Daniel Dennett</div>
+          <iframe src="https://www.youtube.com/embed/v9dZeJ3owGg" alt="Interview with Daniel Bennett"></iframe>
+          <div class="button-container">
+            <button
+              type="button"
+              onclick="window.open('transcripts/daniel-dennett.html');"
+            >
+              Transcript
+            </button>
+            <button
+              type="button"
+              onclick="window.open('https://www.youtube.com/watch?v=y_NJgW621uw');"
+            >
+              ASL Video
+            </button>
+          </div>
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://as.tufts.edu/philosophy/people/faculty/daniel-dennett"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+        <div class="interviews-item">
+          <div class="interviews-item-title">Sonia Sotomayor</div>
+          <iframe src="https://www.youtube.com/embed/0X3l6JBKEzk" alt="Interview with Justice Sonia Sotomayor"></iframe>
+          <div class="button-container">
+            <button
+              type="button"
+              onclick="window.open('transcripts/sonia-sotomayor.html');"
+            >
+              Transcript
+            </button>
+            <button
+              type="button"
+              onclick="window.open('https://www.youtube.com/watch?v=y_NJgW621uw');"
+            >
+              ASL Video
+            </button>
+          </div>
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://now.tufts.edu/2019/09/13/sonia-sotomayor-and-power-asking-why"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+        <div class="interviews-item">
+          <div class="interviews-item-title">Michael Levin</div>
+          <iframe src="https://www.youtube.com/embed/cshrDv16ggM" alt="Interview with Michael Levin"></iframe>
+          <div class="button-container">
+            <button
+              type="button"
+              onclick="window.open('transcripts/michael-levin.html');"
+            >
+              Transcript
+            </button>
+            <button
+              type="button"
+              onclick="window.open('thttps://www.youtube.com/watch?v=y_NJgW621uw');"
+            >
+              ASL Video
+            </button>
+          </div>
+          <div class="learn-more">
+            <a
+              style="text-decoration: none"
+              href="https://as.tufts.edu/biology/people/faculty/michael-levin"
+              >Learn More ></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="space-10px"></div>
+      <div class="space-10px"></div>
+    </div>
+  </body>
+</html>
