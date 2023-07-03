@@ -11,7 +11,7 @@
       });
     </script>
 
-    <title>About Us</title>
+    <title>Contact Us</title>
 
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/contact.css" />
@@ -82,25 +82,25 @@
           <div class="text">Address: 200 Boston Ave, Medford, MA 02155</div>
         </div>
       </div>
-      
+
       <div class="gray-container">
         <div class="subheading">How can we help? Send us a message</div>
         <div class="form-container">
           <form onsubmit="return validateForm()">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" placeholder="Enter Name" required />
 
             <label for="phone">Phone Number (##########)</label>
-            <input type="tel" id="phone" name="phone" required />
+            <input type="tel" id="phone" name="phone" placeholder="Enter Phone Number" required />
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" placeholder="Enter Email" required />
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
 
             <div class="button-container">
-              <button type="submit">Submit</button>
+              <button type="submit">Send Message</button>
             </div>
           </form>
         </div>

@@ -14,53 +14,98 @@
 
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/project-page.css" />
+
+    <script src="../javascript/project-page.js"></script>
   </head>
   <body>
     <div id="header"></div>
     <div class="top-container">
       <div class="project-name">Lego Robot</div>
-      <div class="project-image-container">
-        <div class="arrow-container">
+      <div class="image-container-center">
+        <div class="image-container">
           <img
-            class="arrow"
-            id="left-arrow"
-            src="../images/arrow.png"
-            alt="left-arrow"
+            src="../images/lego-robot.jpeg"
+            class="myImg"
+            alt="Lego Robot Image 1"
           />
-        </div>
-        <img
-          class="project-image"
-          src="../images/lego-robot.jpeg"
-          alt="Lego Robot Cover"
-        />
-        <div class="arrow-container">
           <img
-            class="arrow"
-            src="../images/arrow.png"
-            alt="right-arrow"
+            src="../images/lego-robot2.jpeg"
+            class="myImg"
+            alt="Lego Robot Image 2"
+          />
+          <img
+            src="../images/lego-robot3.jpeg"
+            class="myImg"
+            alt="Lego Robot Image 3"
+          />
+          <img
+            src="../images/lego-robot4.jpeg"
+            class="myImg"
+            alt="Lego Robot Image 4"
           />
         </div>
       </div>
-      <div class="bottom-images-container">
-        <img
-          src="../images/lego-robot2.jpeg"
-          alt="Lego Robot 2"
-        />
-        <img
-          src="../images/lego-robot3.jpeg"
-          alt="Lego Robot 3"
-        />
-        <img
-          src="../images/lego-robot4.jpeg"
-          alt="Lego Robot 4"
-        />
+
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modalImage" class="modal-content" />
       </div>
+
       <div class="buttons-container">
-        <button type="button">Forum</button>
+        <button
+          type="button"
+          onclick="window.location.href='../forums/sample-subforum-page.html';"
+        >
+          Forum
+        </button>
         <button type="button">Tutorial</button>
-          <button type="button" onclick="window.location.href='#similar-projects';">Similar Projects</button>
+        <button
+          type="button"
+          onclick="window.location.href='#similar-projects';"
+        >
+          Similar Projects
+        </button>
       </div>
     </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Function to open the modal
+      function openModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "block";
+      }
+
+      // Function to close the modal
+      function closeModal() {
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+
+      // Get all the images with the class "myImg"
+      const images = document.getElementsByClassName("myImg");
+
+      // Event listener to open the modal when an image is clicked
+      for (let i = 0; i < images.length; i++) {
+        images[i].addEventListener("click", function () {
+          const modalImage = document.getElementById("modalImage");
+          modalImage.src = this.src;
+          openModal();
+        });
+      }
+
+      // Event listener to close the modal when the close button is clicked
+      const closeButton = document.getElementsByClassName("close")[0];
+      closeButton.addEventListener("click", closeModal);
+
+      // Event listener to close the modal when the Escape key is pressed
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
+    </script>
 
     <!--Introduction-->
 
@@ -130,7 +175,7 @@
             </li>
           </ul>
         </div>
-        
+
         <div class="space-10px"></div>
         <div class="space-10px"></div>
         <div class="space-10px"></div>
@@ -153,6 +198,8 @@
           </ul>
         </div>
       </div>
+
+      <div class="space-10px"></div>
     </div>
 
     <!--Skills Tutorials-->
@@ -250,7 +297,7 @@
     </div>
 
     <!--Similar Projects-->
-    
+
     <div id="similar-projects"></div>
 
     <div class="bottom-container-white">
@@ -260,38 +307,25 @@
         <div class="projects-flex-container">
           <div class="projects-item">
             <div class="projects-item-title">Lego Car</div>
-            <img
-              src="../images/spike-prime-car.jpeg"
-              alt="Lego Car"
-            />
+            <img src="../images/spike-prime-car.jpeg" alt="Lego Car" />
             <div class="learn-more">
-              <a
-                style="text-decoration: none"
-                href="https://www.example.com/"
+              <a style="text-decoration: none" href="https://www.example.com/"
                 >Learn More ></a
               >
             </div>
           </div>
           <div class="projects-item">
             <div class="projects-item-title">Lego Grabber</div>
-            <img
-              src="../images/spike-prime-grabber.png"
-              alt="Lego Grabber"
-            />
+            <img src="../images/spike-prime-grabber.png" alt="Lego Grabber" />
             <div class="learn-more">
-              <a
-                style="text-decoration: none"
-                href="https://example.com/"
+              <a style="text-decoration: none" href="https://example.com/"
                 >Learn More ></a
               >
             </div>
           </div>
           <div class="projects-item">
             <div class="projects-item-title">Lego House</div>
-            <img
-              src="../images/lego-house.jpeg"
-              alt="Lego House"
-            />
+            <img src="../images/lego-house.jpeg" alt="Lego House" />
             <div class="learn-more">
               <a style="text-decoration: none" href="https://example.com/"
                 >Learn More ></a

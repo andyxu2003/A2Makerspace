@@ -7,7 +7,6 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  border-top: 2px solid black;;
 }
 
 .gray-container {
@@ -19,7 +18,7 @@ body {
 .white-container {
   width: 50%;
   padding-top: 4%;
-  border-right: 2px solid lightgray;
+  /* border-right: 2px solid lightgray; */
 }
 
 .heading {
