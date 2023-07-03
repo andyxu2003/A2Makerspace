@@ -1,3 +1,7 @@
+body {
+  background-color: #f6f6f6;
+}
+
 h1 {
   text-align: center;
   margin: 45px 0;
@@ -7,15 +11,15 @@ h1 {
 .grid-container {
   margin: 0 16%;
   height: auto;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
+  border: 2px solid gray;
+  border-bottom-style: none;
 }
 
 .forum-container {
   display: grid;
   grid-template-columns: 70% repeat(2, 15%);
   grid-template-rows: 50px repeat(6, 70px);
+  background-color: white;
 }
 
 .forum-container > .header,
@@ -23,10 +27,11 @@ h1 {
 .forum-container > .header3 {
   display: flex;
   align-items: center;
-  background-color: #f2f2f2;
+  color: white;
+  background-color: #1434A4;
   font-size: 24px;
   font-weight: bolder;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid gray;
 }
 
 .forum-container > .header,
@@ -49,7 +54,7 @@ h1 {
   display: flex;
   align-items: center;
   font-size: 24px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid gray;
 }
 
 .forum-container > .name {
