@@ -1,0 +1,53 @@
+.cover-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.heading {
+    text-align: center;
+    margin: 50px 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.white-container,
+.gray-container {
+    padding-top: 1%;
+    padding-bottom: 6%;
+}
+
+.white-container {
+    background-color: white;
+}
+
+.gray-container {
+    background-color: #f6f6f6;
+}
+
+.text {
+    margin: 0 12%;
+    margin-top: -15px;
+    font-size: 24px;
+    line-height: 1.8;
+}
+
+.team-container {
+    margin: 70px 20% 0 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.portrait-container img {
+    width: 170px;
+}
+
+.portrait-container > .caption {
+    text-align: center;
+    font-size: 18px;
+    line-height: 2;
+    margin-top: 10px;
+}
+
+
+
