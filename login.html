@@ -6,7 +6,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
       $(function () {
-        $("#header").load("header.html");
         $("#footer").load("footer.html");
       });
     </script>
@@ -14,9 +13,31 @@
     <title>Log In</title>
 
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/signup-login.css" />
   </head>
   <body>
-    <div id="header"></div>
+
+    <div class="container">
+      <div class="heading">Log In</div>
+      <form action="/action_page.php">
+        <label for="username-email" class="input-label"><b>Username or Email:</b></label>
+        <input type="text" name="username-email" required />
+
+        <label for="psw" class="input-label"><b>Password:</b></label>
+        <input type="password" name="psw" required />
+
+        <label class="remember-label">
+          <input type="checkbox" checked="checked" name="remember" />
+          Remember me
+        </label>
+
+        <div class="btn-container">
+          <button type="submit" class="login-button">Log In</button>
+        </div>
+      </form>
+      <div class="link-container">
+        <a href="signup.html" class="link"><i>Don't have an account? <u>Sign up</u></i></a>
+      </div>
+    </div>
   </body>
 </html>

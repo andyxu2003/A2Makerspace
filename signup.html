@@ -6,7 +6,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
       $(function () {
-        $("#header").load("header.html");
         $("#footer").load("footer.html");
       });
     </script>
@@ -14,9 +13,53 @@
     <title>Sign Up</title>
 
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="stylesheet" href="css/signup-login.css" />
+
   </head>
   <body>
-    <div id="header"></div>
+
+    <div class="container">
+      <div class="heading">Sign Up</div>
+      <form action="/action_page.php">
+
+        <label for="first-name" class="input-label"><b>First name:</b></label>
+        <input
+          type="text"
+          name="first-name"
+          required
+        />
+
+        <label for="last-name" class="input-label"><b>Last name:</b></label>
+        <input
+          type="text"
+          name="name"
+          required
+        />
+
+        <label for="email" class="input-label"><b>Email:</b></label>
+        <input type="text" name="email" required />
+
+        <label for="psw" class="input-label"><b>Password:</b></label>
+        <input
+          type="password"
+          name="psw"
+          required
+        />
+
+        <label for="psw-confirm" class="input-label"><b>Confirm Password:</b></label>
+        <input
+          type="password"
+          name="psw-confirm"
+          required
+        />
+
+        <div class="btn-container">
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </form>
+      <div class="link-container">
+        <a href="login.html" class="link"><i>Have an account? <u>Log in</u></i></a>
+      </div>
+    </div>
   </body>
 </html>

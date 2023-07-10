@@ -19,227 +19,192 @@
   <body>
     <div id="header"></div>
 
-    <div class="top-container">
-      <div class="blank-container">
-        <div class="top-blank-container"></div>
-        <div class="bottom-blank-container">Filters</div>
-      </div>
-      <div class="search-container">
+    <div class="page-container">
+      <div class="top-container">
         <div class="project-title">Projects</div>
-        <div class="find-project-title">Find a Project</div>
-        <div class="search-input">
-          <form action="#">
-            <input
-              type="text"
-              id="search-projects"
-              name="search-projects"
-              placeholder="Enter Keyboard/Author"
-            />
-            <br /><br />
-            <input
-              type="submit"
-              id="search-button"
-              name="search-button"
-              value="Search"
-            />
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <div class="bottom-container">
-      <!--Filters-->
-
-      <div class="filter-container">
-        <!--Category-->
-
-        <div class="space-10px"></div>
-        <div class="space-10px"></div>
-        <div class="space-10px"></div>
-
-        <div class="filter-category">Category</div>
-        <div class="category-search-container">
-          <form action="#">
-            <input
-              type="text"
-              id="search-category"
-              name="search-category"
-              placeholder="Enter Category"
-            />
-          </form>
-        </div>
-        <div class="options-container">
-          <form action="">
-            <input
-              type="checkbox"
-              id="option1"
-              name="option1"
-              value="category1"
-            />
-            <label for="option1">Option 1</label><br />
-            <input
-              type="checkbox"
-              id="option2"
-              name="option2"
-              value="category2"
-            />
-            <label for="option2">Option 2</label><br />
-            <input
-              type="checkbox"
-              id="option3"
-              name="option3"
-              value="category3"
-            />
-            <label for="option3">Option 3</label>
-          </form>
-        </div>
-
-        <!--Tools and Supplies-->
-
-        <div class="filter-category">Tools and Supplies</div>
-        <div class="category-search-container">
-          <form action="#">
-            <input
-              type="text"
-              id="search-category"
-              name="search-category"
-              placeholder="Enter Tools/Supplies"
-            />
-          </form>
-        </div>
-        <div class="options-container">
-          <form action="">
-            <input
-              type="checkbox"
-              id="option1"
-              name="option1"
-              value="category1"
-            />
-            <label for="option1">Option 1</label><br />
-            <input
-              type="checkbox"
-              id="option2"
-              name="option2"
-              value="category2"
-            />
-            <label for="option2">Option 2</label><br />
-            <input
-              type="checkbox"
-              id="option3"
-              name="option3"
-              value="category3"
-            />
-            <label for="option3">Option 3</label>
-          </form>
-        </div>
-
-        <!--Skills-->
-
-        <div class="filter-category">Skills Needed</div>
-        <div class="options-container">
-          <form action="">
-            <input
-              type="checkbox"
-              id="option1"
-              name="option1"
-              value="category1"
-            />
-            <label for="option1">Option 1</label><br />
-            <input
-              type="checkbox"
-              id="option2"
-              name="option2"
-              value="category2"
-            />
-            <label for="option2">Option 2</label><br />
-            <input
-              type="checkbox"
-              id="option3"
-              name="option3"
-              value="category3"
-            />
-            <label for="option3">Option 3</label>
-          </form>
-        </div>
-
-        <!--Accessibility Level-->
-
-        <div class="filter-category">Accessibility Level</div>
-        <div class="options-container">
-          <form action="">
-            <input
-              type="checkbox"
-              id="option1"
-              name="option1"
-              value="category1"
-            />
-            <label for="option1">Option 1</label><br />
-            <input
-              type="checkbox"
-              id="option2"
-              name="option2"
-              value="category2"
-            />
-            <label for="option2">Option 2</label><br />
-            <input
-              type="checkbox"
-              id="option3"
-              name="option3"
-              value="category3"
-            />
-            <label for="option3">Option 3</label>
-          </form>
+        <div class="find-project-container">
+          <div class="find-project-title">Find a Project</div>
+          <div class="search-input">
+            <form action="#">
+              <input
+                type="text"
+                id="search-projects"
+                name="search-projects"
+                placeholder="Enter Keyboard/Author"
+              />
+              <br /><br />
+              <input
+                type="submit"
+                id="search-button"
+                name="search-button"
+                value="Search"
+              />
+            </form>
+          </div>
         </div>
       </div>
 
-      <!--Projects-->
+      <div class="bottom-container">
+        <!--Filters-->
 
-      <div class="projects-container">
-        <div class="projects-flex-container">
-          <div class="projects-item">
-            <a href="projects/Lego-Robot.html"
-              ><div class="projects-item-title">Lego Robot</div>
-              <img
-                src="images/lego-robot.jpeg"
-                alt="Lego Robot"
-            /></a>
+        <div class="filter-container">
+          <form action="#">
+            <div class="filter-button">
+              <input type="submit" value="Apply filters" />
+            </div>
+            <!--Category-->
+            <div class="space-10px"></div>
+            <div class="space-10px"></div>
+            <div class="space-10px"></div>
+            <label class="filter-category">Category</label>
+            <div class="category-search-container">
+              <input
+                type="text"
+                id="search-category"
+                name="search-category"
+                placeholder="Enter Category"
+                class="enter"
+              />
+            </div>
+            <div class="options-container">
+              <input
+                type="checkbox"
+                id="option1"
+                name="option1"
+                value="category1"
+              />
+              <label for="option1">Option 1</label><br />
+              <input
+                type="checkbox"
+                id="option2"
+                name="option2"
+                value="category2"
+              />
+              <label for="option2">Option 2</label><br />
+              <input
+                type="checkbox"
+                id="option3"
+                name="option3"
+                value="category3"
+              />
+              <label for="option3">Option 3</label>
+            </div>
 
-            <div class="buttons">
-              <button type="button" onclick="window.location.href='forums/sample-subforum-page.html';">Forum</button>
-              <button type="button">Tutorial</button>
-              <button
-                type="button"
-                onclick="window.location.href='projects/Lego-Robot.html#similar-projects';"
-              >
-                Similar Projects
-              </button>
+            <!--Tools and Supplies-->
+            <label class="filter-category">Tools and Supplies</label>
+            <div class="category-search-container">
+              <input
+                type="text"
+                id="search-category"
+                name="search-category"
+                placeholder="Enter Tools/Supplies"
+                class="enter"
+              />
             </div>
-          </div>
-          <div class="projects-item">
-            <a href="#">
-              <div class="projects-item-title">3D Printed Elephant</div>
-              <img
-                src="images/3d-elephant.jpeg"
-                alt="3D Printed Elephant"
-            /></a>
-            <div class="buttons">
-              <button type="button">Forum</button>
-              <button type="button">Tutorial</button>
-              <button type="button">Similar Projects</button>
+            <div class="options-container">
+              <input
+                type="checkbox"
+                id="option1"
+                name="option1"
+                value="category1"
+              />
+              <label for="option1">Option 1</label><br />
+              <input
+                type="checkbox"
+                id="option2"
+                name="option2"
+                value="category2"
+              />
+              <label for="option2">Option 2</label><br />
+              <input
+                type="checkbox"
+                id="option3"
+                name="option3"
+                value="category3"
+              />
+              <label for="option3">Option 3</label>
             </div>
-          </div>
-          <div class="projects-item">
-            <a href="#">
-              <div class="projects-item-title">BattleBot</div>
-              <img
-                src="images/battlebot.jpeg"
-                alt="BattleBot"
-            /></a>
-            <div class="buttons">
-              <button type="button">Forum</button>
-              <button type="button">Tutorial</button>
-              <button type="button">Similar Projects</button>
+
+            <!--Skills-->
+            <label class="filter-category">Skills Needed</label>
+            <div class="options-container">
+              <input
+                type="checkbox"
+                id="option1"
+                name="option1"
+                value="category1"
+              />
+              <label for="option1">Option 1</label><br />
+              <input
+                type="checkbox"
+                id="option2"
+                name="option2"
+                value="category2"
+              />
+              <label for="option2">Option 2</label><br />
+              <input
+                type="checkbox"
+                id="option3"
+                name="option3"
+                value="category3"
+              />
+              <label for="option3">Option 3</label>
             </div>
+
+            <!--Accessibility Level-->
+            <label class="filter-category">Accessibility Level</label>
+            <div class="options-container">
+              <input
+                type="checkbox"
+                id="option1"
+                name="option1"
+                value="category1"
+              />
+              <label for="option1">Option 1</label><br />
+              <input
+                type="checkbox"
+                id="option2"
+                name="option2"
+                value="category2"
+              />
+              <label for="option2">Option 2</label><br />
+              <input
+                type="checkbox"
+                id="option3"
+                name="option3"
+                value="category3"
+              />
+              <label for="option3">Option 3</label>
+            </div>
+          </form>
+        </div>
+
+        <!--Projects-->
+
+        <div class="projects-container">
+          <div class="projects-flex-container">
+            <script>
+              var numProjects = 6; // Number of projects to create
+
+              for (var i = 0; i < numProjects; i++) {
+                document.write(`
+                  <div class="projects-item">
+                    <a href="projects/Lego-Robot.html">
+                      <img src="images/lego-robot.jpeg" alt="" />
+                      <div class="projects-item-title">Lego Robot</div>
+                    </a>
+                    <div class="buttons">
+                      <button type="button" onclick="window.location.href='forums/sample-subforum-page.html';">
+                        Forum
+                      </button>
+                      <button type="button" onclick="window.location.href='projects/Lego-Robot.html#similar-projects';">
+                        Similar Projects
+                      </button>
+                    </div>
+                  </div>
+                `);
+              }
+            </script>
           </div>
         </div>
       </div>

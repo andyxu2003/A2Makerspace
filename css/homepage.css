@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 70px;
+  font-size: 60px;
   text-align: center;
   background-color: #f6f6f6;
 }
@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-size: 55px;
+  font-size: 45px;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -40,7 +40,7 @@ span {
 }
 
 .mission-statement {
-  font-size: 28px;
+  font-size: 19px;
   line-height: 2;
   text-align: center;
 }
@@ -57,10 +57,15 @@ span {
   /*   border: solid 1px black; */
 }
 
-.projects-item {
+.projects-item,
+.interviews-item {
   /*   border: dotted 1px black; */
   width: 400px;
-  margin: 0 30px;
+  margin: 0 25px;
+  background-color: white;
+  padding: 40px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
 }
 
 .projects-item a {
@@ -98,14 +103,9 @@ span {
 .interviews-flex-container {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   /*   width: 100%; */
   /*   border: solid 1px black; */
-}
-
-.interviews-item {
-  /*   border: dotted 1px black; */
-  width: 400px;
-  margin: 0 3ch;
 }
 
 .interviews-item-title {
@@ -114,15 +114,10 @@ span {
   margin-bottom: 10px;
 }
 
-.interviews-item img {
-  height: 300px;
-  width: 400px;
-  object-fit: cover;
-}
-
 .interviews-item iframe {
   width: 400px;
   height: 300px;
+  border-style: none;
 }
 
 .button-container {
@@ -151,6 +146,10 @@ span {
   margin-top: 20px;
   text-align: center;
   font-style: italic;
+}
+
+.learn-more a {
+  color: black;
 }
 
 .learn-more:hover {

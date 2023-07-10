@@ -28,11 +28,16 @@ h2 {
   text-align: center;
 }
 
+.search label {
+  display: block;
+}
+
 .search > select,
 .search > input[type="submit"] {
   height: 50px;
   box-sizing: content-box;
-  font-size: 18px;  
+  font-size: 50px;  
+  display: block;
 }
 
 .search > select {
