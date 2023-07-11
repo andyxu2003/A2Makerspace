@@ -1,19 +1,13 @@
 .intro-container {
   display: flex;
-  height: 650px;
-}
-
-.welcome {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 60px;
-  text-align: center;
-  background-color: #f6f6f6;
+  height: 450px;
+  width: 100%;
 }
 
 .intro-container img {
   height: auto;
+  width: 100%;
+  object-fit: cover;
 }
 
 .white-container {

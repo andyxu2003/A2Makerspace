@@ -36,8 +36,8 @@
         <nav>
           <ul>
             <li><a href="../../projects.html">Projects</a></li>
-            <li><a href="../../tutorials.html">Tutorials</a></li>
             <li><a href="../../hackathons.html">Hackathons</a></li>
+            <li><a href="../../tutorials.php">Tutorials</a></li>
             <li><a href="../../makers.html">Makers</a></li>
             <li><a href="../../forums.html">Forums</a></li>
             <li><a href="../../about.html">About Us</a></li>
