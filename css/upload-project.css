@@ -62,6 +62,11 @@
   text-align: center;
 }
 
+.upload-image-container {
+  display: flex;
+  justify-content: center;
+}
+
 .upload-image-box {
   border: 2px dashed black;
   display: flex;
@@ -78,11 +83,11 @@
   text-align: center;
 }
 
-.browse-button {
+.browse-button-container {
   margin-top: 20px;
 }
 
-.browse-button button {
+.browse-button > .browse-button {
   border-style: none;
   border-radius: 15px;
   width: 150px;
@@ -93,7 +98,7 @@
   cursor: pointer;
 }
 
-.browse-button button:hover {
+.browse-button > .browse-button:hover {
   background-color: #202a44;
 }
 
