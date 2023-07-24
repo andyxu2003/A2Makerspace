@@ -1,0 +1,9 @@
+$servername = "mysql-user.eecs.tufts.edu";
+$username = "a2makerspace";
+$password = "3tF5ucTgufmW5Z";
+$dbname = "a2makerspace";
+
+var cloudName = "dlca9mehs";
+var folderName = "project-images/" + document.getElementById("project-title").value;
+var apiKey = "675384967533139"; 
+var uploadPreset = "imageUpload"; 

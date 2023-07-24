@@ -1,3 +1,11 @@
+.ui-autocomplete-loading {
+  background: white url('https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+
+.page-container {
+  margin: 0 25%;
+}
+
 .upload-header {
   background-color: #f6f6f6;
   color: black;
@@ -41,205 +49,136 @@
   text-decoration: underline;
 }
 
-.white-container {
-  background-color: white;
-  margin-top: 50px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  /*   border: 1px solid black; */
+#title-counter,
+#intro-counter {
+  text-align: right;
+}
+
+.submit-button {
+  font-size: 20px;
+  background-color: #f6f6f6;
+  border-style: none;
+  cursor: pointer;
+  font-weight: bolder;
+  padding-top: 3px;
+}
+
+.submit-button:hover {
+  background-color: #f6f6f6;
+  text-decoration: underline;
 }
 
 .title {
-  font-size: 35px;
+  font-size: 36px;
   text-align: center;
+  font-weight: bolder;
 }
 
 .subtitle {
   font-size: 24px;
   color: #1434a4;
-  margin-top: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .upload-image-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .upload-image-box {
-  border: 2px dashed black;
+  border: 2px dashed lightgray;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  width: 600px;
-  height: 450px;
+  flex-direction: column;
+  width: 100%;
+  height: 400px;
 }
 
-.upload-image-box p {
-  font-size: 30px;
-  line-height: 3;
+.upload-image-box div {
+  font-size: 24px;
   text-align: center;
+  margin-top: -20px;
 }
 
-.browse-button-container {
-  margin-top: 20px;
+.upload-button-container {
+  padding-top: 40px;
 }
 
-.browse-button > .browse-button {
+input[type="file"] {
+  display: none;
+}
+
+.title-button,
+.upload-button {
   border-style: none;
-  border-radius: 15px;
-  width: 150px;
-  height: 50px;
+  border-radius: 5px;
+  padding: 12px 24px;
   background-color: #1434a4;
   color: white;
   font-size: 18px;
   cursor: pointer;
 }
 
-.browse-button > .browse-button:hover {
+.title-button-container {
+  margin-top: 15px;
+}
+
+.browse-button-label:hover {
   background-color: #202a44;
 }
 
-.title-input,
-.category-input {
-  margin-top: 80px;
+.select-button {
+  border-radius: 5px;
 }
 
-.title-input input,
-.category-input select {
-  width: 800px;
-  height: 50px;
+.upload-image-container label {
+  margin-bottom: 25px;
+}
+
+.upload-image-container,
+.title-container,
+.category-container {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.upload-image-container label,
+.title-container label,
+.title-container input,
+.category-container label,
+.category-contaner select,
+.intro-container label,
+.intro-container textarea {
+  display: block;
+}
+
+.upload-image-container label,
+.title-container label,
+.category-container label,
+.intro-container label {
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+.title-container input,
+.category-container select {
+  width: 100%;
+  height: 40px;
   margin-top: 20px;
   font-size: 18px;
 }
 
-.gray-container {
-  margin: 70px 0;
-  padding: 70px 0;
-  width: 100%;
-  background-color: #f2f2f2;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.intro-container label {
+  text-align: center;
+  margin-top: 60px;
 }
 
-.intro-input-container {
-  margin-top: 40px;
+.intro-container textarea {
+  height: 500px;
 }
-
-.intro-input {
-  display: block;
-  width: 1000px;
-  overflow: hidden;
-  resize: both;
-  min-height: 500px;
-  line-height: 20px;
-  border: 1px solid black;
-  padding: 5px;
-  font-size: 18px;
-  background-color: white;
-}
-
-.supplies-container,
-.skills-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 1000px;
-  /*   height: 50px; */
-}
-
-.supplies-form,
-.skills-form {
-  margin: 0 14%;
-  padding: 20px 0;
-  /*   margin: 20px 14% 20px 14%; */
-  display: flex;
-  width: 1000px;
-  height: 50px;
-  text-align: justify;
-}
-
-.supplies-form > input[type="text"],
-.supplies-form > input[type="number"],
-.supplies-form > input[type="submit"] {
-  background-color: white;
-  padding: 10px;
-  font-size: 18px;
-  margin: 0 10px;
-  border: 1px solid black;
-}
-
-.supplies-form > input[type="text"] {
-  width: 800px;
-}
-
-.supplies-form > input[type="number"],
-.supplies-form > input[type="submit"] {
-  width: 50px;
-}
-
-.supplies-form > input[type="submit"] {
-  width: 150px;
-}
-
-.supplies-list-container {
-  display: grid;
-  grid-template-columns: 752px 248px;
-  grid-template-rows: repeat(4, 50px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-left: 25px;
-  margin-top: 15px;
-}
-
-.items-added-title,
-.quantity-title,
-.skills-title,
-.level-title {
-  font-size: 24px;
-}
-
-.item,
-.quantity,
-.skill,
-.level {
-  font-size: 18px;
-}
-
-.skills-form > input[type="text"],
-.skills-form > select,
-.skills-form > input[type="submit"] {
-  background-color: white;
-  padding: 10px;
-  font-size: 18px;
-  margin: 0 10px;
-  border: 1px solid black;
-}
-
-.skills-form > input[type="text"] {
-  width: 500px;
-}
-
-.skills-form > select {
-  width: 350px;
-}
-
-.skills-form > input[type="submit"] {
-  width: 150px;
-}
-
-.skills-list-container {
-  display: grid;
-  grid-template-columns: 500px 500px;
-  grid-template-rows: repeat(4, 50px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  margin-left: 25px;
-  margin-top: 15px;
-}
-
-

@@ -123,6 +123,8 @@
 
         .upload-button-container {
             padding-top: 40px;
+            display: flex;
+            justify-content: center;
         }
 
         input[type="file"] {
@@ -152,6 +154,10 @@
             border-radius: 5px;
         }
 
+        .upload-image-container {
+            margin-bottom: 30px;
+        }
+
         .upload-image-container label {
             margin-bottom: 25px;
         }
@@ -167,7 +173,8 @@
 
         .upload-image-container label,
         .title-container label,
-        .title-container input .category-container label,
+        .title-container input,
+        .category-container label,
         .category-contaner select,
         .intro-container label,
         .intro-container textarea {
@@ -194,8 +201,6 @@
             text-align: center;
             margin-top: 60px;
         }
-
-        #intro-subtitle {}
 
         .intro-container textarea {
             height: 500px;
@@ -346,53 +351,15 @@
                         </li>
                         <li><a href="#"> ? Help </a></li>
                         <li>
-                            <!-- <input class="submit-button" type="submit" value="Submit"> -->
+                            <input class="submit-button" type="submit" value="Submit">
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
+        
 
         <div class="page-container">
-
-            <!-- Project name form -->
-
-            <!-- <form id="project-title-form">
-                <label for="project-title">Project Title</label>
-                <input type="text" id="project-name" name="project-name" maxlength="50" required>
-                <button type="submit">Submit</button>
-            </form> -->
-
-            <div class="title-container">
-                <form id="project-title-form">
-                    <label for="project-title">Project Title</label>
-                    <input type="text" id="project-name" name="project-name" maxlength="50" required>
-                    <div class="title-button-container">
-                        <button type="submit" class="title-button">Submit</button>
-                    </div>
-                </form>
-            </div>
-            <div id="title-counter"></div>
-
-            <!-- File input element -->
-            <!-- <input type="file" id="upload-input" style="display: none;">
-            <button id="select-button">Select Image</button>
-            <button id="upload-button" style="display: none;">Upload Image</button> -->
-
-            <div class="upload-image-container">
-                <label for="image-upload">Upload Images</label>
-                <div class="subtitle">What images best showcases your project?</div>
-                <div class="upload-image-box">
-                    <div>Upload an image below</div>
-                    <div class="upload-button-container">
-                        <input type="file" id="upload-input" style="display: none;">
-                        <button id="select-button" class="upload-button">Select Image</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="image-grid" id="image-container"></div>
-
             <script>
                 let uploadedImagesCount = 0;
                 let customImageName = ""; // Initialize the customImageName variable
@@ -431,16 +398,16 @@
                     }
                 });
 
-                document.getElementById('project-title-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    const projectName = document.getElementById('project-name').value.trim();
-                    if (projectName !== "") {
-                        customImageName = projectName.replace(/\s+/g, '-'); // Update the customImageName with the project name
-                        // Update the URL with the project name
-                        const newUrl = window.location.origin + window.location.pathname + '?project=' + encodeURIComponent(customImageName);
-                        window.history.replaceState({}, document.title, newUrl);
-                    }
-                });
+                // document.getElementById('project-title-form').addEventListener('submit', function(event) {
+                //     event.preventDefault();
+                //     const projectName = document.getElementById('project-name').value.trim();
+                //     if (projectName !== "") {
+                //         customImageName = projectName.replace(/\s+/g, '-'); // Update the customImageName with the project name
+                //         // Update the URL with the project name
+                //         const newUrl = window.location.origin + window.location.pathname + '?project=' + encodeURIComponent(customImageName);
+                //         window.history.replaceState({}, document.title, newUrl);
+                //     }
+                // });
 
                 function displayImage(publicId) {
                     const imageContainer = document.getElementById('image-container');
@@ -494,7 +461,7 @@
             <br>
             <div class="category-container">
                 <label for="category">Category</label>
-                <select name="category" id="category" required>
+                <select name="category" id="category">
                     <?php
                     foreach ($categories as $category) {
                         echo "<option value='" . $category . "'>" . $category . "</option>";
@@ -504,19 +471,21 @@
             </div>
 
             <!-- Introduction -->
+
             <div class="intro-container">
                 <label for="intro-input">Introduction</label><br>
                 <div class="subtitle" id="intro-subtitle">What did you make and why?</div>
                 <textarea id="intro-input" name="intro-input" maxlength="1000"></textarea>
             </div>
 
+
             <!-- Supplies -->
 
             <h2>Supplies and Tools</h2>
             <div id="supplies-container">
                 <div class="supply-row">
-                    <input type="text" class="supplies-input" name="supplies[]" placeholder="Enter supplies and tools" required>
-                    <input type="number" class="quantity-input" name="quantity[]" placeholder="Qty" required>
+                    <input type="text" class="supplies-input" name="supplies[]" placeholder="Enter supplies and tools" novalidate>
+                    <input type="number" class="quantity-input" name="quantity[]" placeholder="Qty" novalidate>
                     <button type="button" class="remove-button">Remove</button>
                 </div>
             </div>
@@ -525,8 +494,8 @@
             <h2>Skills Needed</h2>
             <div id="skills-container">
                 <div class="skill-row">
-                    <input type="text" class="skills-input" name="skills[]" placeholder="Enter skills" required>
-                    <input type="text" class="skill-level-input" name="skill-level[]" placeholder="Skill Level" required>
+                    <input type="text" class="skills-input" name="skills[]" placeholder="Enter skills" novalidate>
+                    <input type="text" class="skill-level-input" name="skill-level[]" placeholder="Skill Level" novalidate>
                     <button type="button" class="remove-button">Remove</button>
                 </div>
             </div>
@@ -644,6 +613,31 @@
             skillRow.appendChild(removeButton);
             skillContainer.appendChild(skillRow);
         });
+    </script>
+    <!-- Existing code... -->
+
+    <script>
+        // Function to handle form submission and custom validation
+        function handleSubmit(event) {
+            event.preventDefault();
+            const projectTitle = document.getElementById('project-title').value.trim();
+            const category = document.getElementById('category').value.trim();
+            const introduction = document.getElementById('intro-input').value.trim();
+
+            // Perform custom validation
+            if (projectTitle === "" || category === "" || introduction === "") {
+                alert("Please fill out all required fields.");
+                return false; // Prevent form submission
+            }
+
+            // Your additional validation logic goes here...
+
+            // If validation passes, submit the form
+            event.target.submit();
+        }
+
+        // Add event listener to the form on submit
+        document.querySelector('form').addEventListener('submit', handleSubmit);
     </script>
 </body>
 
