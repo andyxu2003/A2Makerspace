@@ -4,20 +4,67 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script>
-      $(function () {
-        $("#header").load("header.html");
-        $("#footer").load("footer.html");
-      });
-    </script>
 
     <title>About Us</title>
 
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <style>
+      .cover-img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      .heading {
+        text-align: center;
+        margin: 50px 0;
+        font-size: 50px;
+        font-weight: bold;
+      }
+
+      .white-container,
+      .gray-container {
+        padding-top: 1%;
+        padding-bottom: 6%;
+      }
+
+      .white-container {
+        background-color: white;
+      }
+
+      .gray-container {
+        background-color: #f6f6f6;
+      }
+
+      .text {
+        margin: 0 12%;
+        margin-top: -15px;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      .team-container {
+        margin: 70px 20% 0 20%;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .portrait-container img {
+        width: 170px;
+      }
+
+      .portrait-container > .caption {
+        text-align: center;
+        font-size: 18px;
+        line-height: 2;
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
-    <div id="header"></div>
+
+    <?php include('head.php'); ?>
 
     <img
       src="images/about.jpeg"

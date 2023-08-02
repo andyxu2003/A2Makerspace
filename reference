@@ -7,3 +7,54 @@ var cloudName = "dlca9mehs";
 var folderName = "project-images/" + document.getElementById("project-title").value;
 var apiKey = "675384967533139"; 
 var uploadPreset = "imageUpload"; 
+
+$cloud_name = 'dlca9mehs';
+$api_key = '675384967533139';
+$api_secret = 'Grt4uiHCsdFN4FJGkTLzIuT_3iA';
+
+<div class="alt-container">
+<div class="alt-input-container">
+    <label for="alt1" class="alt-label">Alt 1:</label>
+    <input type="text" name="alt1" id="alt1" required><br>
+</div>
+<div class="alt-input-container">
+    <label for="alt2" class="alt-label">Alt 2:</label>
+    <input type="text" name="alt2" id="alt2" required><br>
+</div>
+<div class="alt-input-container">
+    <label for="alt3" class="alt-label">Alt 3:</label>
+    <input type="text" name="alt3" id="alt3" required><br>
+</div>
+<div class="alt-input-container">
+    <label for="alt4" class="alt-label">Alt 4:</label>
+    <input type="text" name="alt4" id="alt4" required><br>
+</div>
+<div class="alt-input-container">
+    <label for="alt5" class="alt-label">Alt 5:</label>
+    <input type="text" name="alt5" id="alt5" required><br>
+</div>
+
+</div>
+
+.alt-container {
+            width: 862px;
+            border-style: solid;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .alt-input-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .alt-label {
+            display: block;
+            font-size: 14px;
+        }
+
+        .alt-container input {
+            display: block;
+            width: 150px;
+        }

@@ -27,51 +27,10 @@
             flex-direction: column;
         }
 
-
-        .intro-container {
-            position: relative;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 100px;
-        }
-
-        .intro-container img {
-            height: auto;
-            width: 100%;
-            object-fit: cover;
-            height: 500px;
-            opacity: .8;
-        }
-
-        .welcome-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f6f6f6;
-            padding: 50px;
-            border-radius: 20px;
-            border: 5px solid lightgray;
-        }
-
-        .welcome {
-            font-size: 70px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 1000;
-        }
-
-        .cover-img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-        }
-
         h1 {
             text-align: center;
-            margin-top: 45px;
-            margin-bottom: 100px;
+            margin-top: 50px;
+            margin-bottom: 50px;
             font-size: 50px;
         }
 
@@ -82,58 +41,56 @@
             padding-bottom: 10px;
         }
 
-        .white-container {
-            background-color: #fff;
-            padding: 20px;
+        .gray-container {
+            background-color: #f6f6f6;;
         }
 
         .search-container {
-            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-            padding: 30px 20px;
-            margin: 0 25%;
-            border-radius: 20px;
-            border-style: none;
-            background-color: #f2f2f2;
+            margin: auto;
+            width: 80%;
         }
 
         .search {
-            text-align: center;
             margin-bottom: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             margin-top: 50px;
         }
 
-        .search label {
-            display: block;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-
+        .select {
+            margin: auto;
         }
 
-        .search select,
-        .search input[type="submit"] {
-            height: 50px;
-            box-sizing: content-box;
-            font-size: 20px;
-            margin-bottom: 10px;
+        label {
             display: block;
+            text-align: left !important;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .search input[type="submit"],
+        #tutorial,
+        #level {
+            font-size: 16px;
+            padding: 12px 0 12px 12px;
+            border: 1px solid #bababa;
+            border-radius: 5px;
             width: 100%;
         }
 
-        .search select {
-            width: 600px;
+        #tutorial,
+        #level {
             padding-left: 5px;
         }
 
-        .search input[type="submit"] {
-            width: 200px;
+        .search-button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-button {
+            width: 200px !important;
         }
 
         .search-button-container>.search-button {
-            width: 40%;
             height: 45px;
             background-color: #545454;
             color: white;
@@ -156,9 +113,7 @@
         }
 
         .bottom-container {
-            background-color: #f2f2f2;
-            margin-top: 100px;
-            padding-top: 3%;
+            margin-top: 50px;
         }
 
         .tutorials-container {
@@ -173,9 +128,8 @@
             margin: 5px 0 30px 10%;
             font-size: 24px;
             margin-bottom: 50px;
-            font-weight: 1000;
+            font-weight: bold;
         }
-
 
         .video-container {
             position: relative;
@@ -256,44 +210,44 @@
     $allQuery = "SELECT tutorial, level, name, video, transcript, asl FROM tutorials";
     $allResult = mysqli_query($connection, $allQuery);
     ?>
+    <div class="gray-container">
+        <h1>Tutorials</h1>
 
-    <div class="intro-container" role="main">
-        <img src="images/tutorial.png" alt="tutorial page cover image" />
-        <div class="welcome-container">
-            <div class="welcome">Tutorials</div>
+        <div class="search-container">
+            <form class="search" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <label for="tutorial">What do you want to learn?</label>
+                <div class="select">
+                    <select name="tutorial" id="tutorial">
+                        <option value="">All Tutorials</option>
+                        <?php
+                        while ($tutorialRow = mysqli_fetch_assoc($tutorialResult)) {
+                            $selected = ($_POST['tutorial'] === $tutorialRow['tutorial']) ? 'selected' : '';
+                            echo '<option value="' . $tutorialRow['tutorial'] . '" ' . $selected . '>' . $tutorialRow['tutorial'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="space-50px"></div>
+                <div class="space-10px"></div>
+
+                <label for="level">What level do you want to learn it at?</label>
+                <div class="select">
+                    <select name="level" id="level">
+                        <option value="">All Levels</option>
+                        <?php
+                        while ($levelRow = mysqli_fetch_assoc($levelResult)) {
+                            $selected = ($_POST['level'] === $levelRow['level']) ? 'selected' : '';
+                            echo '<option value="' . $levelRow['level'] . '" ' . $selected . '>' . $levelRow['level'] . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="search-button-container">
+                    <input class="search-button" type="submit" name="search" value="Search">
+                </div>
+            </form>
         </div>
-    </div>
-
-    <div class="search-container">
-        <form class="search" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-            <label style="color:#1434a4;" for="tutorial">What do you want to learn?</label>
-            <select name="tutorial" id="tutorial">
-                <option value="">-- All Tutorials --</option>
-                <?php
-                while ($tutorialRow = mysqli_fetch_assoc($tutorialResult)) {
-                    $selected = ($_POST['tutorial'] === $tutorialRow['tutorial']) ? 'selected' : '';
-                    echo '<option value="' . $tutorialRow['tutorial'] . '" ' . $selected . '>' . $tutorialRow['tutorial'] . '</option>';
-                }
-                ?>
-            </select>
-
-            <div class="space-50px"></div>
-            <div class="space-10px"></div>
-
-            <label style="color:#1434a4;" for="level">What level do you want to learn it at?</label>
-            <select name="level" id="level">
-                <option value="">-- All Levels --</option>
-                <?php
-                while ($levelRow = mysqli_fetch_assoc($levelResult)) {
-                    $selected = ($_POST['level'] === $levelRow['level']) ? 'selected' : '';
-                    echo '<option value="' . $levelRow['level'] . '" ' . $selected . '>' . $levelRow['level'] . '</option>';
-                }
-                ?>
-            </select>
-            <div class="search-button-container">
-                <input class="search-button" type="submit" name="search" value="Search">
-            </div>
-        </form>
     </div>
 
     <div class="bottom-container">

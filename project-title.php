@@ -2,108 +2,93 @@
 <html>
 
 <head>
-  <title>Set Project Name</title>
-  <link rel="stylesheet" href="https://a2makerspace.cs.tufts.edu/upload-project.css" />
-  <style>
-    body {
-      background-color: #fbfbfb;
-    }
-
-    .container {
-      padding-top: 10%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-
-    .title-container {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      background-color: white;
-      box-shadow: 10px 10px 2px 0px rgba(128, 128, 128, 0.16);
-      padding: 70px 70px 100px 70px;
-    }
-
-    .title-container label {
-      font-size: 32px;
-      font-weight: bolder;
-    }
-
-    .subtitle {
-      font-size: 24px;
-      color: #1434a4;
-      margin-top: 20px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .title-container input {
-      width: 800px;
-      /* Adjust the width as per your preference */
-      height: 40px;
-      /* Adjust the height as per your preference */
-      font-size: 18px;
-      padding: 10px;
-      /* Add some padding to improve appearance */
-      border: 1px solid #ccc;
-      /* Add a border for better visibility */
-      outline: none;
-      /* Remove the default outline */
-    }
-
-    .title-button {
-      padding: 15px 30px;
-      /* Increase padding for a bigger button */
-      font-size: 20px;
-      border: none;
-      background-color: #1434a4;
-      /* Change the button color */
-      color: #fff;
-      /* Change the text color to white */
-      border-radius: 10px;
-      /* Round the button corners */
-      cursor: pointer;
-      outline: none;
-      /* Remove the default outline */
-    }
-
-    .title-button:hover {
-      background-color: #202a44;
-      /* Darken the button color on hover */
-    }
-
-    /* Optional: Apply some margin between the button and the input field */
-    .title-button-container {
-      margin-top: 20px;
-    }
-  </style>
+    <title>Project Title</title>
 </head>
+<style>
+    body {
+        background-color: #fbfbfb;
+    }
+
+    .project-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        width: 50%;
+        padding: 50px 30px 70px 30px;
+        margin-top: 10%;
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+    }
+
+    .center-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #title label,
+    #title input {
+        display: block;
+
+    }
+
+    #title label {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        padding-bottom: 20px;
+    }
+
+    #title input[type="text"] {
+        width: 500px;
+        font-size: 18px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 18px 5px;
+        margin-bottom: 20px;
+        background-color: #f6f6f6;
+    }
+
+    #title input[type="submit"] {
+        width: 510px;
+        border-style: none;
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 15px 0;
+        background-color: #1434a4;
+        color: white;
+        cursor: pointer;
+    }
+
+    #title input[type="submit"]:hover {
+        background-color: #202a44;
+    }
+
+    .help-button {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+</style>
 
 <body>
-  <?php
-  include('head.php');
-  ?>
-  <div class="container">
+    <?php include('head.php'); ?>
 
-
-
-    <div class="title-container">
-      <form id="project-form" action="upload.php" method="GET">
-        <label for="project-name">Project Title</label>
-        <div class="subtitle">What is the name of your project?</div>
-        <input type="text" id="project-name" name="project-name" required />
-        <div id="title-counter"></div>
-        <div class="title-button-container">
-          <button id="submit-button" type="submit" class="title-button">
-            Set Project Title
-          </button>
-        </div>
-      </form>
+    <div class="project-title-container">
+        <form id="title" action="project-upload.php" method="post">
+            <div class="center-container">
+                <label for="title">Project Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter Project Title" required>
+                <input type="submit" value="Set Project Title">
+            </div>
+        </form>
+        <div class="help-button">Need Help?</div>
     </div>
-  </div>
+
 </body>
 
 </html>

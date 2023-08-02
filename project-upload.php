@@ -6,6 +6,8 @@
     <!-- Add the Cloudinary Upload Widget and Image Gallery Widget scripts -->
     <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/5031sidsawvxog354epcaqhsm8kali8rjvzmibzwxkf8tijd/tinymce/5/tinymce.min.js"></script>
+
     <style>
         body {
             background-color: #fbfbfb;
@@ -20,7 +22,27 @@
             background-color: white;
         }
 
-        #videoContainer {
+        .help-button-container {
+            margin: auto;
+        }
+
+        .help-button {
+            width: 100px !important;
+            height: 40px !important;
+            background-color: transparent !important;
+            border: none !important;
+            color: black !important;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .help-button:hover {
+            text-decoration: underline;
+        }
+
+        #videoContainer,
+        #ASLvideoContainer {
             margin-top: 30px;
             width: 560px;
             height: 315px;
@@ -28,14 +50,14 @@
         }
 
         textarea {
-            height: 100px;
+            height: 400px;
             resize: none;
             font-family: Arial, sans-serif;
             width: 700px;
         }
 
         .gallery-container {
-            text-align: center;
+            /* text-align: center; */
             margin-top: 20px;
             /* Center the images horizontally */
         }
@@ -53,6 +75,7 @@
             border-radius: 5px;
             margin: 5px;
             /* Add some margin between images for spacing */
+            object-fit: cover;
         }
 
         .flex-item img {
@@ -85,6 +108,43 @@
             justify-content: center;
         }
 
+        .alt-container {
+            width: 810px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .alt-input-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: -22px;
+
+        }
+
+        .alt-input-container label {
+            display: none;
+        }
+
+        .alt-container input {
+            width: 148px;
+            font-size: 14px !important;
+            padding: 12px 0 12px 6px !important;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         /*               */
 
         .container {
@@ -105,6 +165,7 @@
         label {
             /* font-weight: bolder; */
             padding-bottom: 15px;
+            font-weight: bold;
         }
 
         .bold-label {
@@ -116,18 +177,20 @@
             background-color: #fbfbfb;
         }
 
-        .text-input {
+        .text-input,
+        #accessibility,
+        #hackathon {
             width: 700px;
         }
 
         input[type="text"],
         input[type="number"],
         input[type="submit"],
+        #accessibility,
+        #hackathon,
         textarea {
             font-size: 16px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            padding-left: 12px;
+            padding: 12px 0 12px 12px;
             border: 1px solid #bababa;
             border-radius: 5px;
         }
@@ -215,6 +278,11 @@
 
     <div class="page-container">
         <div class="container">
+
+            <div class="help-button-container">
+                <button class="help-button" onclick="helpButton()">Need Help?</button>
+            </div>
+
             <label class="bold-label">Upload Images</label>
             <form id="imageUploadForm">
                 <input type="hidden" name="title" value="<?php echo htmlspecialchars($_POST["title"]); ?>">
@@ -225,22 +293,48 @@
                 <div class="gallery-container" id="imageContainer"></div>
             </div>
 
+            <form id="altForm" action="project-submitted.php" method="post">
+                <div class="alt-container">
+                    <div class="alt-input-container">
+                        <label for="alt1" class="alt-label">Image #1 Name</label>
+                        <input type="text" name="alt1" id="alt1" alt="Image 1 Name" placeholder="Image #1 Description" autocomplete="off" required><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt2" class="alt-label">Image #2 Name</label>
+                        <input type="text" name="alt2" id="alt2" alt="Image 2 Name" placeholder="Image #2 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt3" class="alt-label">Image #3 Name</label>
+                        <input type="text" name="alt3" id="alt3" alt="Image 3 Name" placeholder="Image #3 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt4" class="alt-label">Image #4 Name</label>
+                        <input type="text" name="alt4" id="alt4" alt="Image 4 Name" placeholder="Image #4 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt5" class="alt-label">Image #5 Name</label>
+                        <input type="text" name="alt5" id="alt5" alt="Image 5 Name" placeholder="Image #5 Description" autocomplete="off"><br>
+                    </div>
+                </div>
+            </form>
+
             <div class="grid-wrapper">
                 <div class="bottom-image-container">
                     <img id="mainImage" src="" class="bottom-image" alt="Selected Image" />
                 </div>
             </div>
+
         </div>
 
         <div class="space"></div>
 
-        <form action="test-upload-data.php" method="post">
+        <form id="projectForm" action="project-submitted.php" method="post" onsubmit="saveTinyMCEContent()">
 
             <!--UPLOAD VIDEO-->
 
             <div class="container">
                 <label for="video">Upload Video</label>
-                <input class="text-input" type="text" name="video" id="videoLinkInput" required autocomplete="off" placeholder="Paste your YouTube video link here" />
+                <input class="text-input" type="text" name="video" id="videoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link here" />
                 <div id="videoContainer"></div>
             </div>
 
@@ -249,37 +343,36 @@
             <!--UPLOAD ASL CAPTIONING VIDEO-->
 
             <div class="container">
-                <label for="aslVideo">Upload ASL Captioning Video</label>
-                <input class="text-input" type="text" name="video" id="videoLinkInput" required autocomplete="off" placeholder="Paste your YouTube video link with ASL Captioning here" />
-                <div id="videoContainer"></div>
+                <label for="ASLvideo">Upload ASL Captioning for Video</label>
+                <input class="text-input" type="text" name="ASLvideo" id="ASLvideoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link with ASL Captioning here" />
+                <div id="ASLvideoContainer"></div>
             </div>
 
             <div class="space"></div>
 
             <!--TRANSCRIPT-->
             <div class="container">
-                <label for="transcript">Transcript</label>
-                <textarea type="text" name="transcript" id="transcript" required autocomplete="off" placeholder="Paste the transcript of your video here"></textarea>
+                <label for="transcript">Transcript of Video</label>
+                <textarea type="text" name="transcript" id="transcript" autocomplete="off" placeholder="Paste the transcript of your video here"></textarea>
             </div>
 
             <div class="space"></div>
 
-            <!--CATEGORY-->
+            <!--ACCESSIBILITY-->
 
             <div class="container">
-                <label for="category">Category</label>
-                <input class="text-input" type="text" name="category" id="category" required list="categoryList" autocomplete="off" placeholder="Set a category for your project" />
-                <datalist id="categoryList"></datalist>
+                <label for="accessibility" class="bold-label">Accessibility Level of Video</label>
+                <select name="accessibility" id="accessibility" required>
+                </select>
             </div>
 
             <div class="space"></div>
 
-            <!--INTRODUCTION-->
+            <!--DESCRIPTION-->
 
             <div class="container">
-                <label for="introduction" class="bold-label">Introduction</label>
-                <input class="text-input" type="text" name="introduction" id="introduction" required list="introductionList" autocomplete="off" placeholder="What did you make, and why?" />
-                <datalist id="introductionList"></datalist>
+                <label for="description" class="bold-label">Description</label>
+                <textarea name="description" id="description" required placeholder="What did you make, and why?"></textarea>
             </div>
 
             <div class="space"></div>
@@ -333,13 +426,14 @@
 
             <div class="space"></div>
 
-            <!--ACCESSIBILITY-->
+            <!--HACKATHON TAGS-->
 
             <div class="container">
-                <label for="accessibility" class="bold-label">Accessibility Level</label>
-                <input class="text-input" type="text" name="accessibility" id="accessibility" required list="accessibilityList" autocomplete="off" placeholder="What accessibility level is your project page currently at?" />
-                <datalist id="accessibilityList"></datalist>
+                <label for="hackathon" class="bold-label">Hackathon</label>
+                <select name="hackathon" id="hackathon" required>
+                </select>
             </div>
+
 
             <div class="space"></div>
 
@@ -355,17 +449,25 @@
     <!-- ADDING AND REMOVING ITEMS JAVASCRIPT -->
 
     <script>
+        function helpButton() {
+            window.open("https://support.google.com", "_blank");
+        };
+    </script>
+
+    <script>
         $(document).ready(function() {
             // Function to handle adding more supplies
             $("#addSupply").click(function() {
                 var newSupply = `
-        <div>
-            <input type="text" name="supplyName[]" required list="suppliesList" autocomplete="off">
-            <input type="number" name="supplyQty[]" required min="1">
-            <button type="button" class="removeSupply">Remove</button>
-        </div>
-        `;
-                $("#suppliesContainer").append(newSupply);
+                <div class="flex-container">
+                    <input type="text" name="supplyName[]" required list="suppliesList" autocomplete="off" class="supplies-left" placeholder="What did you use to make the project? Include the quantity" />
+                    <input type="number" name="supplyQty[]" required min="1" class="supplies-right" placeholder="Qty" />
+                    <button type="button" class="removeSupply">Remove</button>
+                </div>
+      `;
+
+                // Append the new supply fields above the "Add More Supplies" button
+                $("#addSupply").before(newSupply);
             });
 
             // Function to handle removing supplies
@@ -373,16 +475,17 @@
                 $(this).parent().remove();
             });
 
-            // Function to handle adding more skills
+            // Function to handle adding more supplies
             $("#addSkill").click(function() {
                 var newSkill = `
-        <div>
-            <input type="text" name="skillName[]" required list="skillsList" autocomplete="off">
-            <input type="text" name="skillLevel[]" required>
-            <button type="button" class="removeSkill">Remove</button>
-        </div>
-        `;
-                $("#skillsContainer").append(newSkill);
+                <div class="flex-container">
+                    <input type="text" name="skillName[]" required list="skillsList" autocomplete="off" class="skills-left" placeholder="What skills do you need? Include the skill level" />
+                    <input type="text" name="skillLevel[]" required list="skillLevelList" autocomplete="off" class="skills-right" placeholder="Skill Level" />
+                    <button type="button" class="removeSkill">Remove</button>
+                </div>
+            `;
+                // Append the new skill fields above the "Add More Skills" button
+                $("#addSkill").before(newSkill);
             });
 
             // Function to handle removing skills
@@ -393,12 +496,14 @@
             // Function to handle adding more tags
             $("#addTag").click(function() {
                 var newTag = `
-        <div>
-            <input type="text" name="tagName[]" required list="tagsList" autocomplete="off">
-            <button type="button" class="removeTag">Remove</button>
-        </div>
-        `;
-                $("#tagsContainer").append(newTag);
+                <div class="flex-container">
+                    <input type="text" name="tagName[]" required list="tagsList" autocomplete="off" class="tag-input" placeholder="Set a tag for your project" />
+                    <button type="button" class="removeTag">Remove</button>
+                </div>
+            `;
+
+                // Append the new tag fields above the "Add More Tags" button
+                $("#addTag").before(newTag);
             });
 
             // Function to handle removing tags
@@ -459,7 +564,7 @@
 
                                 // Fetch data from each table and column
                                 $categoryData = fetchData($conn, 'categories', 'name');
-                                $introductionData = fetchData($conn, 'introduction', 'name');
+                                $descriptionData = fetchData($conn, 'description', 'name');
                                 $suppliesData = fetchData($conn, 'supplies', 'name');
                                 $skillsData = fetchData($conn, 'skills', 'name');
                                 $tagsData = fetchData($conn, 'tags', 'name');
@@ -471,7 +576,7 @@
                                 // Combine the data into an associative array
                                 $data = array(
                                     'category' => $categoryData,
-                                    'introduction' => $introductionData,
+                                    'description' => $descriptionData,
                                     'supplies' => $suppliesData,
                                     'skills' => $skillsData,
                                     'tags' => $tagsData,
@@ -483,12 +588,150 @@
 
             // Populate the datalists with the fetched data
             populateDatalist('categoryList', optionsData.category);
-            populateDatalist('introductionList', optionsData.introduction);
+            populateDatalist('descriptionList', optionsData.description);
             populateDatalist('suppliesList', optionsData.supplies);
             populateDatalist('skillsList', optionsData.skills);
             populateDatalist('tagsList', optionsData.tags);
             populateDatalist('accessibilityList', optionsData.accessibility);
         });
+    </script>
+
+    <script>
+        // Function to populate the select element with options
+        function populateAccessibilitySelect(selectElement, options) {
+            // Clear existing options
+            selectElement.innerHTML = "";
+
+            // Create the placeholder option
+            const placeholderOption = document.createElement("option");
+            placeholderOption.value = ""; // Empty value
+            placeholderOption.textContent = "Select Accessibility Level"; // Placeholder text
+            placeholderOption.disabled = true; // Disable the placeholder option, so it can't be selected
+            placeholderOption.selected = true; // Make the placeholder option selected by default
+            selectElement.appendChild(placeholderOption);
+
+            // Append new options to the select element
+            options.forEach(function(option) {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.textContent = option;
+                selectElement.appendChild(optionElement);
+            });
+        }
+
+        // Function to fetch the accessibility data from the PHP script and populate the select element
+        function populateAccessibilityDropdown() {
+            // Fetch the data from the PHP script
+            <?php
+            // Replace the following variables with your database credentials
+            $host = "mysql-user.eecs.tufts.edu";
+            $username = "a2makerspace";
+            $password = "3tF5ucTgufmW5Z";
+            $database = "a2makerspace";
+
+            // Create a database connection
+            $conn = new mysqli($host, $username, $password, $database);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch data from the "accessibility" table
+            $query = "SELECT name FROM accessibility";
+            $result = $conn->query($query);
+
+            $data = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row["name"];
+                }
+            }
+
+            // Close the database connection
+            $conn->close();
+
+            // Pass the data to JavaScript as a JSON object
+            echo "var accessibilityOptions = " . json_encode($data) . ";";
+            ?>
+
+            // Get the select element
+            const accessibilitySelect = document.getElementById("accessibility");
+
+            // Populate the select element with the fetched options
+            populateAccessibilitySelect(accessibilitySelect, accessibilityOptions);
+        }
+
+        // Call the function to populate the accessibility dropdown when the page loads
+        document.addEventListener("DOMContentLoaded", populateAccessibilityDropdown);
+    </script>
+
+    <script>
+        function populateHackathonSelect(selectElement, options) {
+            // Clear existing options
+            selectElement.innerHTML = "";
+
+            // Create the placeholder option
+            const placeholderOption = document.createElement("option");
+            placeholderOption.value = "";
+            placeholderOption.textContent = "Was this project part of a hackathon?";
+            placeholderOption.disabled = true; 
+            placeholderOption.selected = true;
+            selectElement.appendChild(placeholderOption);
+
+            // Append new options to the select element
+            options.forEach(function(option) {
+                const optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.textContent = option;
+                selectElement.appendChild(optionElement);
+            });
+        }
+        // Function to fetch the hackathon data from the PHP script and populate the select element
+        function populateHackathonDropdown() {
+            // Fetch the data from the PHP script
+            <?php
+            // Replace the following variables with your database credentials
+            $host = "mysql-user.eecs.tufts.edu";
+            $username = "a2makerspace";
+            $password = "3tF5ucTgufmW5Z";
+            $database = "a2makerspace";
+
+            // Create a database connection
+            $conn = new mysqli($host, $username, $password, $database);
+
+            // Check connection
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch data from the "hackathon" table
+            $query = "SELECT name FROM hackathons";
+            $result = $conn->query($query);
+
+            $data = array();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $data[] = $row["name"];
+                }
+            }
+
+            // Close the database connection
+            $conn->close();
+
+            // Pass the data to JavaScript as a JSON object
+            echo "var hackathonOptions = " . json_encode($data) . ";";
+            ?>
+
+            // Get the select element
+            const hackathonSelect = document.getElementById("hackathon");
+
+            // Populate the select element with the fetched options
+            populateHackathonSelect(hackathonSelect, hackathonOptions);
+        }
+
+        // Call the function to populate the accessibility dropdown when the page loads
+        document.addEventListener("DOMContentLoaded", populateHackathonDropdown);
     </script>
 
     <!-- VIDEO UPLOAD JAVASCRIPT -->
@@ -525,30 +768,84 @@
         document.getElementById("videoLinkInput").addEventListener("input", updateEmbeddedVideo);
     </script>
 
+    <!--ASL VIDEO UPLOAD JAVASCRIPT-->
+
+    <script>
+        // Function to extract the video ID from the YouTube link
+        function getVideoID(link) {
+            const regex = /(?:\?v=|\/embed\/|\.be\/)([a-zA-Z0-9_-]+)/;
+            const match = link.match(regex);
+            return match ? match[1] : null;
+        }
+
+        // Function to generate the embedded YouTube video URL
+        function generateEmbeddedURL(videoID) {
+            return `https://www.youtube.com/embed/${videoID}`;
+        }
+
+        // Function to update the embedded video when the input field changes
+        function updateEmbeddedVideo() {
+            const inputField = document.getElementById("ASLvideoLinkInput");
+            const videoContainer = document.getElementById("ASLvideoContainer");
+            const videoLink = inputField.value;
+            const videoID = getVideoID(videoLink);
+
+            if (videoID) {
+                const embeddedURL = generateEmbeddedURL(videoID);
+                videoContainer.innerHTML = `<iframe width="560" height="315" src="${embeddedURL}" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                videoContainer.innerHTML = ""; // Clear the container if no valid video link is provided
+            }
+        }
+
+        // Listen for input changes and call the updateEmbeddedVideo function
+        document.getElementById("ASLvideoLinkInput").addEventListener("input", updateEmbeddedVideo);
+    </script>
+
     <!-- IMAGE UPLOAD JAVASCRIPT -->
 
     <script>
         var cloudName = "dlca9mehs"; // Replace with your Cloudinary cloud name
         var apiKey = "675384967533139"; // Replace with your Cloudinary API key
         var apiSecret = "Grt4uiHCsdFN4FJGkTLzIuT_3iA"; // Replace with your Cloudinary API secret
+
         var projectTitle = "<?php echo isset($_POST['title']) ? $_POST['title'] : ''; ?>";
-        var folderName = "project-images/" + projectTitle;
+        projectTitleFormatted = projectTitle.replace(/ /g, '-');
+        var folderName = "project-images/" + projectTitleFormatted;
 
         var data = new FormData();
         data.append("name", folderName);
 
         var uploadedImages = []; // To store the URLs of uploaded images
         var maxImages = 5; // Maximum allowed images
+        var imageCount = 0; // Global variable to track the image count
 
         // Function to display the uploaded image
         function displayImage(imageURL) {
             const imageContainer = document.getElementById("imageContainer");
+
+            // Create a container for the image and its caption
+            const imageWrapper = document.createElement("div");
+            imageWrapper.classList.add("image-wrapper");
+
+            // Increment the image count and create the caption element
+            imageCount++;
+            const caption = document.createElement("div");
+            caption.textContent = "Image #" + imageCount;
+            caption.classList.add("image-caption");
+
+            // Create the image element
             const imageElement = document.createElement("img");
             imageElement.src = imageURL;
             imageElement.alt = "Uploaded Image";
             imageElement.classList.add("flex-item", "selected");
 
-            imageContainer.appendChild(imageElement);
+            // Append the caption and image to the container
+            imageWrapper.appendChild(caption);
+            imageWrapper.appendChild(imageElement);
+
+            // Append the container to the imageContainer
+            imageContainer.appendChild(imageWrapper);
         }
 
         // Cloudinary Upload Widget configuration
@@ -601,19 +898,25 @@
             imageGallery.render();
         }
 
-        // Event listener to switch the selected image
+        // Function to handle selecting an image
+        function selectImage(imageElement) {
+            const allImages = document.querySelectorAll(".flex-item");
+
+            for (let i = 0; i < allImages.length; i++) {
+                if (allImages[i] === imageElement) {
+                    imageElement.classList.add("selected");
+                    document.getElementById("mainImage").src = imageElement.src;
+                } else {
+                    allImages[i].classList.remove("selected");
+                }
+            }
+        }
+
+        // Event listener to switch the selected image when clicked
         document.getElementById("imageContainer").addEventListener("click", function(event) {
             const targetImage = event.target;
             if (targetImage.tagName === "IMG") {
-                const selectedImage = document.querySelector(".selected");
-                if (selectedImage) {
-                    selectedImage.classList.remove("selected");
-                }
-                targetImage.classList.add("selected");
-                const index = Array.from(targetImage.parentNode.children).indexOf(targetImage);
-                if (uploadedImages[index]) {
-                    document.getElementById("mainImage").src = uploadedImages[index];
-                }
+                selectImage(targetImage);
             }
         });
 
@@ -622,19 +925,17 @@
             const selectedImage = document.querySelector(".selected");
             if (!selectedImage) return;
 
-            const currentIndex = Array.from(selectedImage.parentNode.children).indexOf(selectedImage);
+            const allImages = document.querySelectorAll(".flex-item");
+            const currentIndex = Array.from(allImages).indexOf(selectedImage);
             let newIndex;
+
             if (event.key === "ArrowLeft") {
-                newIndex = (currentIndex === 0) ? uploadedImages.length - 1 : currentIndex - 1;
+                newIndex = (currentIndex === 0) ? allImages.length - 1 : currentIndex - 1;
             } else if (event.key === "ArrowRight") {
-                newIndex = (currentIndex === uploadedImages.length - 1) ? 0 : currentIndex + 1;
+                newIndex = (currentIndex === allImages.length - 1) ? 0 : currentIndex + 1;
             }
 
-            const newSelectedImage = document.querySelectorAll(".flex-item")[newIndex];
-            newSelectedImage.focus();
-            document.getElementById("mainImage").src = uploadedImages[newIndex];
-            newSelectedImage.classList.add("selected");
-            selectedImage.classList.remove("selected");
+            selectImage(allImages[newIndex]);
         });
     </script>
 
