@@ -40,7 +40,7 @@ if (isset($_GET['title'])) {
             }
 
             .project-title {
-                font-size: 32px;
+                font-size: 36px;
                 font-weight: bolder;
                 text-align: center;
                 margin-top: 60px;
@@ -50,6 +50,15 @@ if (isset($_GET['title'])) {
             .hackathon {
                 font-size: 20px;
                 margin-bottom: 40px;
+                border: 1px lightgray solid;
+                background-color: #f6f6f6;
+                border-radius: 18px;
+                padding: 12px;
+            }
+
+            .accessibility {
+                font-size: 20px;
+                margin-bottom: 20px;
             }
 
             .title {
@@ -131,15 +140,28 @@ if (isset($_GET['title'])) {
             $accessibility = $row["accessibility"];
             $description = $row["description"];
             $hackathon = $row["hackathon"];
+            $accessibility = $row["accessibility"];
+
+            function alterText($accessibility) {
+                // Match and replace "Without" or "With" with lowercase first character and bold
+                $accessibility = preg_replace_callback('/\b(without|with)\b/i', function ($matches) {
+                    return '<strong>' . lcfirst($matches[0]) . '</strong>';
+                }, $accessibility);
+                
+                // Bold the word "and"
+                $accessibility = preg_replace('/\b(and)\b/i', '<strong>\1</strong>', $accessibility);
+            
+                return $accessibility;
+            }
+
             ?>
 
             <div class="page-container">
                 <div class="title-container">
                     <div class="project-title"><?php echo $title; ?></div>
                     <div class="hackathon">Created for the <b><?php echo $hackathon; ?></b></div>
+                    <div class="accessibility">The video is currently <?php echo alterText($accessibility) ?></div>
                 </div>
-
-
 
                 <div class="video-container">
                     <iframe src="<?php echo $video; ?>"></iframe>

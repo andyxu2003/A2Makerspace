@@ -23,22 +23,23 @@
         }
 
         .help-button-container {
-            margin: auto;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
         }
 
         .help-button {
-            width: 100px !important;
-            height: 40px !important;
-            background-color: transparent !important;
-            border: none !important;
             color: black !important;
-            margin-top: -10px;
-            margin-bottom: 10px;
             font-size: 16px;
+            text-decoration: none;
+            background-color: #f6f6f6;
+            border: 1px solid lightgray;
+            border-radius: 20px;
+            padding: 12px;
         }
 
         .help-button:hover {
-            text-decoration: underline;
+            background-color: lightgray;
         }
 
         #videoContainer,
@@ -59,6 +60,8 @@
         .gallery-container {
             /* text-align: center; */
             margin-top: 20px;
+            width: 900px;
+
             /* Center the images horizontally */
         }
 
@@ -90,7 +93,7 @@
 
         .bottom-image-container {
             margin: auto;
-            margin-top: 20px;
+            /* margin-top: 20px; */
             width: 750px;
             height: 550px;
             border: 2px dashed #ddd;
@@ -106,12 +109,15 @@
         .grid-wrapper {
             display: grid;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .alt-container {
             width: 810px;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
         }
 
         .alt-input-container {
@@ -127,9 +133,10 @@
         }
 
         .alt-container input {
-            width: 148px;
+            width: 390px;
             font-size: 14px !important;
             padding: 12px 0 12px 6px !important;
+            margin-bottom: 10px;
         }
 
         .image-caption {
@@ -267,6 +274,27 @@
         input[type="submit"] {
             width: 200px;
         }
+
+        .white-container {
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 0;
+            background-color: white;
+        }
+
+        .video-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .white-space {
+            height: 80px;
+            background-color: white;
+        }
     </style>
 </head>
 
@@ -279,10 +307,6 @@
     <div class="page-container">
         <div class="container">
 
-            <div class="help-button-container">
-                <button class="help-button" onclick="helpButton()">Need Help?</button>
-            </div>
-
             <label class="bold-label">Upload Images</label>
             <form id="imageUploadForm">
                 <input type="hidden" name="title" value="<?php echo htmlspecialchars($_POST["title"]); ?>">
@@ -293,8 +317,13 @@
                 <div class="gallery-container" id="imageContainer"></div>
             </div>
 
-            <form id="altForm" action="project-submitted.php" method="post">
-                <div class="alt-container">
+            <div class="help-button-container">
+                <button class="help-button" onclick="window.open('https://www.w3.org/WAI/tutorials/images/informative/', '_blank')">Image Descriptions Help</button>
+            </div>
+
+            <form id="projectForm" action="project-submitted" method="post">
+                <!-- <form id="altForm" action="project-submitted" method="post"> -->
+                <div class="alt-container" class="alt-container">
                     <div class="alt-input-container">
                         <label for="alt1" class="alt-label">Image #1 Name</label>
                         <input type="text" name="alt1" id="alt1" alt="Image 1 Name" placeholder="Image #1 Description" autocomplete="off" required><br>
@@ -315,144 +344,174 @@
                         <label for="alt5" class="alt-label">Image #5 Name</label>
                         <input type="text" name="alt5" id="alt5" alt="Image 5 Name" placeholder="Image #5 Description" autocomplete="off"><br>
                     </div>
+                    <div class="alt-input-container">
+                        <label for="alt6" class="alt-label">Image #6 Name</label>
+                        <input type="text" name="alt6" id="alt6" alt="Image 6 Name" placeholder="Image #6 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt7" class="alt-label">Image #7 Name</label>
+                        <input type="text" name="alt7" id="alt7" alt="Image 7 Name" placeholder="Image #7 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt8" class="alt-label">Image #8 Name</label>
+                        <input type="text" name="alt8" id="alt8" alt="Image 8 Name" placeholder="Image #8 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt9" class="alt-label">Image #9 Name</label>
+                        <input type="text" name="alt9" id="alt9" alt="Image 9 Name" placeholder="Image #9 Description" autocomplete="off"><br>
+                    </div>
+                    <div class="alt-input-container">
+                        <label for="alt10" class="alt-label">Image #10 Name</label>
+                        <input type="text" name="alt10" id="alt10" alt="Image 10 Name" placeholder="Image #10 Description" autocomplete="off"><br>
+                    </div>
                 </div>
-            </form>
 
-            <div class="grid-wrapper">
-                <div class="bottom-image-container">
-                    <img id="mainImage" src="" class="bottom-image" alt="Selected Image" />
+                <!-- </form> -->
+
+                <div class="grid-wrapper">
+                    <div class="bottom-image-container">
+                        <img id="mainImage" src="" class="bottom-image" alt="Selected Image" />
+                    </div>
                 </div>
+
+        </div>
+
+        <div class="space"></div>
+
+        <!-- <form id="projectForm" action="project-submitted" method="post"> -->
+
+        <!--UPLOAD VIDEO-->
+        <div class="white-container">
+
+            <div class="video-container">
+                <label for="video">Upload Video</label>
+                <input class="text-input" type="text" name="video" id="videoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link here" />
+                <div id="videoContainer"></div>
+            </div>
+
+            <div class="white-space"></div>
+
+            <!--UPLOAD ASL CAPTIONING VIDEO-->
+
+            <div class="video-container">
+                <label for="ASLvideo">Upload ASL Captioning for Video</label>
+                <input class="text-input" type="text" name="ASLvideo" id="ASLvideoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link with ASL Captioning here" />
+                <div id="ASLvideoContainer"></div>
+            </div>
+
+            <div class="white-space"></div>
+
+            <!--TRANSCRIPT-->
+            <div class="video-container">
+                <label for="transcript">Transcript of Video</label>
+                <textarea type="text" name="transcript" id="transcript" autocomplete="off" placeholder="Paste the transcript of your video here"></textarea>
+            </div>
+
+            <div class="white-space"></div>
+
+            <!--ACCESSIBILITY-->
+
+            <div class="video-container">
+                <label for="accessibility" class="bold-label">Accessibility Level of Video</label>
+                <select name="accessibility" id="accessibility" required>
+                </select>
             </div>
 
         </div>
 
         <div class="space"></div>
 
-        <form id="projectForm" action="project-submitted.php" method="post" onsubmit="saveTinyMCEContent()">
+        <!--DESCRIPTION-->
 
-            <!--UPLOAD VIDEO-->
+        <div class="container">
+            <label for="description" class="bold-label">Description</label>
+            <textarea name="description" id="description" required placeholder="What did you make, and why?"></textarea>
+        </div>
 
-            <div class="container">
-                <label for="video">Upload Video</label>
-                <input class="text-input" type="text" name="video" id="videoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link here" />
-                <div id="videoContainer"></div>
+        <div class="space"></div>
+
+        <!--SUPPLIES-->
+
+        <div id="suppliesContainer" class="container">
+            <label for="supplies" class="bold-label">Supplies</label>
+            <div class="flex-container">
+                <input type="text" name="supplyName[]" required list="suppliesList" autocomplete="off" class="supplies-left" placeholder="What did you use to make the project? Include the quantity" />
+                <input type="number" name="supplyQty[]" required min="1" class="supplies-right" placeholder="Qty" />
+                <button type="button" class="removeSupply">Remove</button>
             </div>
+            <button type="button" id="addSupply">Add More Supplies</button>
+        </div>
+        <datalist id="suppliesList"></datalist>
 
-            <div class="space"></div>
+        <div class="space"></div>
 
-            <!--UPLOAD ASL CAPTIONING VIDEO-->
+        <!--SKILLS-->
 
-            <div class="container">
-                <label for="ASLvideo">Upload ASL Captioning for Video</label>
-                <input class="text-input" type="text" name="ASLvideo" id="ASLvideoLinkInput" autocomplete="off" placeholder="Paste your YouTube video link with ASL Captioning here" />
-                <div id="ASLvideoContainer"></div>
+        <div id="skillsContainer" class="container">
+            <label for="skills" class="bold-label">Skills</label>
+            <div class="flex-container">
+                <input type="text" name="skillName[]" required list="skillsList" autocomplete="off" class="skills-left" placeholder="What skills do you need? Include the skill level" />
+                <input type="text" name="skillLevel[]" required list="skillLevelList" autocomplete="off" class="skills-right" placeholder="Skill Level" />
+                <button type="button" class="removeSkill">Remove</button>
             </div>
+            <button type="button" id="addSkill">Add More Skills</button>
+        </div>
+        <datalist id="skillsList"></datalist>
+        <datalist id="skillLevelList">
+            <option value="Beginner">
+            <option value="Intermediate">
+            <option value="Advanced">
+        </datalist>
 
-            <div class="space"></div>
+        <div class="space"></div>
 
-            <!--TRANSCRIPT-->
-            <div class="container">
-                <label for="transcript">Transcript of Video</label>
-                <textarea type="text" name="transcript" id="transcript" autocomplete="off" placeholder="Paste the transcript of your video here"></textarea>
+        <!--TAGS-->
+
+        <div id="tagsContainer" class="container">
+            <label for="tags" class="bold-label">Tags</label>
+            <div class="flex-container">
+                <input type="text" name="tagName[]" required list="tagsList" autocomplete="off" class="tag-input" placeholder="Set a tag for your project" />
+                <button type="button" class="removeTag">Remove</button>
             </div>
+            <button type="button" id="addTag">Add More Tags</button>
+        </div>
+        <datalist id="tagsList"></datalist>
 
-            <div class="space"></div>
+        <div class="space"></div>
 
-            <!--ACCESSIBILITY-->
+        <!--HACKATHON TAGS-->
 
-            <div class="container">
-                <label for="accessibility" class="bold-label">Accessibility Level of Video</label>
-                <select name="accessibility" id="accessibility" required>
-                </select>
-            </div>
-
-            <div class="space"></div>
-
-            <!--DESCRIPTION-->
-
-            <div class="container">
-                <label for="description" class="bold-label">Description</label>
-                <textarea name="description" id="description" required placeholder="What did you make, and why?"></textarea>
-            </div>
-
-            <div class="space"></div>
-
-            <!--SUPPLIES-->
-
-            <div id="suppliesContainer" class="container">
-                <label for="supplies" class="bold-label">Supplies</label>
-                <div class="flex-container">
-                    <input type="text" name="supplyName[]" required list="suppliesList" autocomplete="off" class="supplies-left" placeholder="What did you use to make the project? Include the quantity" />
-                    <input type="number" name="supplyQty[]" required min="1" class="supplies-right" placeholder="Qty" />
-                    <button type="button" class="removeSupply">Remove</button>
-                </div>
-                <button type="button" id="addSupply">Add More Supplies</button>
-            </div>
-            <datalist id="suppliesList"></datalist>
-
-            <div class="space"></div>
-
-            <!--SKILLS-->
-
-            <div id="skillsContainer" class="container">
-                <label for="skills" class="bold-label">Skills</label>
-                <div class="flex-container">
-                    <input type="text" name="skillName[]" required list="skillsList" autocomplete="off" class="skills-left" placeholder="What skills do you need? Include the skill level" />
-                    <input type="text" name="skillLevel[]" required list="skillLevelList" autocomplete="off" class="skills-right" placeholder="Skill Level" />
-                    <button type="button" class="removeSkill">Remove</button>
-                </div>
-                <button type="button" id="addSkill">Add More Skills</button>
-            </div>
-            <datalist id="skillsList"></datalist>
-            <datalist id="skillLevelList">
-                <option value="Beginner">
-                <option value="Intermediate">
-                <option value="Advanced">
-            </datalist>
-
-            <div class="space"></div>
-
-            <!--TAGS-->
-
-            <div id="tagsContainer" class="container">
-                <label for="tags" class="bold-label">Tags</label>
-                <div class="flex-container">
-                    <input type="text" name="tagName[]" required list="tagsList" autocomplete="off" class="tag-input" placeholder="Set a tag for your project" />
-                    <button type="button" class="removeTag">Remove</button>
-                </div>
-                <button type="button" id="addTag">Add More Tags</button>
-            </div>
-            <datalist id="tagsList"></datalist>
-
-            <div class="space"></div>
-
-            <!--HACKATHON TAGS-->
-
-            <div class="container">
-                <label for="hackathon" class="bold-label">Hackathon</label>
-                <select name="hackathon" id="hackathon" required>
-                </select>
-            </div>
+        <div class="container">
+            <label for="hackathon" class="bold-label">Hackathon</label>
+            <select name="hackathon" id="hackathon" required>
+            </select>
+        </div>
 
 
-            <div class="space"></div>
+        <div class="space"></div>
 
-            <input type="hidden" name="title" value="<?php echo $_POST['title']; ?>" />
-            <div class="submit-container">
-                <input type="submit" value="Submit" />
-            </div>
+        <input type="hidden" name="title" value="<?php echo $_POST['title']; ?>" />
+        <div class="submit-container">
+            <input type="submit" value="Submit" />
+        </div>
         </form>
     </div>
 
     <div class="space"></div>
 
-    <!-- ADDING AND REMOVING ITEMS JAVASCRIPT -->
-
     <script>
-        function helpButton() {
-            window.open("https://support.google.com", "_blank");
-        };
+        function submitBothForms() {
+            // Get references to the forms
+            const altForm = document.getElementById('altForm');
+            const projectForm = document.getElementById('projectForm');
+
+            // Submit both forms
+            altForm.submit();
+            projectForm.submit();
+        }
     </script>
+
+    <!-- ADDING AND REMOVING ITEMS JAVASCRIPT -->
 
     <script>
         $(document).ready(function() {
@@ -675,7 +734,7 @@
             const placeholderOption = document.createElement("option");
             placeholderOption.value = "";
             placeholderOption.textContent = "Was this project part of a hackathon?";
-            placeholderOption.disabled = true; 
+            placeholderOption.disabled = true;
             placeholderOption.selected = true;
             selectElement.appendChild(placeholderOption);
 
@@ -817,7 +876,7 @@
         data.append("name", folderName);
 
         var uploadedImages = []; // To store the URLs of uploaded images
-        var maxImages = 5; // Maximum allowed images
+        var maxImages = 10; // Maximum allowed images
         var imageCount = 0; // Global variable to track the image count
 
         // Function to display the uploaded image

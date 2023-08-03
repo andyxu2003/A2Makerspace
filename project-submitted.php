@@ -11,6 +11,12 @@ $alt2 = $_POST['alt2'];
 $alt3 = $_POST['alt3'];
 $alt4 = $_POST['alt4'];
 $alt5 = $_POST['alt5'];
+$alt6 = $_POST['alt6'];
+$alt7 = $_POST['alt7'];
+$alt8 = $_POST['alt8'];
+$alt9 = $_POST['alt9'];
+$alt10 = $_POST['alt10'];
+
 $transcript = $_POST['transcript'];
 $title = $_POST['title'];
 // $category = $_POST['category'];
@@ -20,9 +26,6 @@ $hackathon = $_POST['hackathon'];
 
 $input = trim($title);
 $formattedTitle = str_replace(' ', '+', $input);
-
-echo $formattedTitle;
-echo $title;
 
 function youtubeUrlToEmbed($url)
 {
@@ -48,7 +51,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO projects (alt1, alt2, alt3, alt4, alt5, video, ASLvideo, transcript, title, description, accessibility, hackathon";
+$sql = "INSERT INTO projects (alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8, alt9, alt10, video, ASLvideo, transcript, title, description, accessibility, hackathon";
 
 // Helper function to check if a value exists in the given table column
 function valueExists($conn, $tableName, $columnName, $value)
@@ -97,7 +100,7 @@ for ($i = 1; $i <= 5; $i++) {
     }
 }
 
-$sql .= ") VALUES ('$alt1', '$alt2', '$alt3', '$alt4', '$alt5', '$video', '$ASLvideo', '$transcript', '$title', '$description', '$accessibility', '$hackathon'";
+$sql .= ") VALUES ('$alt1', '$alt2', '$alt3', '$alt4', '$alt5', '$alt6', '$alt7', '$alt8', '$alt9', '$alt10' '$video', '$ASLvideo', '$transcript', '$title', '$description', '$accessibility', '$hackathon'";
 
 // Insert dynamic supplies
 for ($i = 1; $i <= 10; $i++) {
@@ -165,13 +168,14 @@ $conn->close();
         }
 
         button {
-            font-size: 16px;
-            padding: 20px 0;
+            font-size: 18px;
+            padding: 18px 0;
             width: 180px;
             color: white;
             background-color: #1434a4;
             transition-duration: .3s;
-            border: none;
+            border-style: none;
+            cursor: pointer;
         }
 
 

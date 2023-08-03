@@ -79,14 +79,13 @@
     <?php include('head.php'); ?>
 
     <div class="project-title-container">
-        <form id="title" action="project-upload.php" method="post">
+        <form id="title" action="project-upload" method="post">
             <div class="center-container">
                 <label for="title">Project Title</label>
-                <input type="text" id="title" name="title" placeholder="Enter Project Title" required>
+                <input type="text" id="title" name="title" placeholder="Enter the title of your project" required>
                 <input type="submit" value="Set Project Title">
             </div>
         </form>
-        <div class="help-button">Need Help?</div>
     </div>
 
 </body>
